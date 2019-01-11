@@ -1,0 +1,40 @@
+<table class="cd-collection-items theme">
+	<thead>
+		<tr>
+			<th class="right"><?php echo $this->Translate('Id'); ?></th>
+			<th><?php echo $this->Translate('Title'); ?></th>
+			<th><?php echo $this->Translate('Interpret'); ?></th>
+			<th class="right"><?php echo $this->Translate('Year'); ?></th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		<?php foreach ($this->Albums as $id => $album): ?>
+			<tr>
+				<td class="right"><?php echo $album->Id; ?></td>
+				<td><a href="<?php
+					echo $this->Url(':Edit', [
+						"id"	=> $album->Id,
+					]);
+				?>">
+					<?php echo $album->Title; ?>
+				</a></td>
+				<td><?php echo $album->Interpret; ?></td>
+				<td class="right"><?php echo $album->Year; ?></td>
+				<td class="center">
+					<form class="delete" action="<?php
+						echo $this->Url(':Delete', ['absolute' => TRUE]);
+					?>" method="post">
+						<input type="hidden" name="<?php
+							echo $this->CsrfName;
+						?>" value="<?php
+							echo $this->CsrfValue;
+						?>" />
+						<input type="hidden" name="id" value="<?php echo $album->Id; ?>" />
+						<input type="submit" value="<?php echo $this->Translate('Delete'); ?>" />
+					</form>
+				</td>
+			</tr>
+		<?php endforeach; ?>
+	</tbody>
+</table>

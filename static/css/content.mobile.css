@@ -1,0 +1,14 @@
+form.signout{float:right;margin:10px 12px 0 12px;}
+form.signout span{display:block;}
+form.signout button[type=submit]{display:block;float:right;}
+
+form#detail label span{display:block;text-align:left;padding-left:20px;}
+form#detail input{left:20px;display:block;margin-bottom:10px;width:calc(100% - 20px - 40px);}
+form#detail input.year{width:calc(100% - 20px - 34px);}
+form#detail div:last-child{text-align:center;}
+form#detail button.send{margin-top:5px;}
+
+form.theme{width:100% !important;padding:18px 0 !important;}
+table.theme{width:100%;}
+table.theme thead tr th{font-size:100%;padding:10px 5px 8px 5px;}
+table.theme tbody tr td{font-size:100%;padding:10px 5px 8px 5px;}

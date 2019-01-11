@@ -1,0 +1,30 @@
+CD Collection;CD Collection
+Use login: "{0}" and password: "{1}".;Use login: "{0}" and password: "{1}".
+User;User
+Password;Password
+Sign In;Sign In
+Error {0};Error {0}
+Oooops!;Oooops!
+Log Out;Log Out
+New album;New album
+Id;Id
+Title;Title
+Interpret;Interpret
+Year;Year
+Delete;Delete
+Back to list;Back to list
+Title:;Title:
+Interpret:;Interpret:
+Year:;Year:
+Save;Save
+Edit album - {0};Edit album - {0}
+Edit album;Edit album
+Display:;Display:
+Change language:;Change language:
+Language: de-DE;German
+Language: es-ES;Spanish
+Language: ru-RU;Russian
+Language: cs-CZ;Czech
+Language: en-US;English
+mobile;mobile
+full;full

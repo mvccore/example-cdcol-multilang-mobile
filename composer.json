@@ -1,0 +1,38 @@
+{
+	"name": "mvccore/example-cdcol-multilang-mobile",
+	"type": "project",
+	"description": "MvcCore Example - CD collection - classic CRUD example with default SQLite database, with authentication, with multilanguage routes and mobile version.",
+	"keywords": [
+		"mvccore",
+		"framework",
+		"crud",
+		"crud sample",
+		"crud application",
+		"cd albums",
+		"cds",
+		"albums",
+		"cd collection",
+		"authentication",
+		"auth",
+		"login",
+		"credentials"
+	],
+	"license": ["BSD-3-Clause"],
+	"authors": [{
+		"name": "Tom Flidr",
+		"homepage": "https://github.com/tomFlidr"
+	}],
+	"require": {
+		"php": ">=5.4.0",
+		"mvccore/mvccore": "^5.0",
+		"mvccore/ext-router-media-localization": "^5.0",
+		"mvccore/ext-form": "^5.0",
+		"mvccore/ext-form-field-text": "^5.0",
+		"mvccore/ext-form-field-numeric": "^5.0",
+		"mvccore/ext-form-field-button": "^5.0",
+		"mvccore/ext-view-helper-assets": "^5.0",
+		"mvccore/ext-auth-basic": "^5.0",
+		"mvccore/ext-debug-tracy-all": "^5.0"
+	},
+	"minimum-stability": "stable"
+}

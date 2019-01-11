@@ -1,0 +1,23 @@
+.old-browser-warning{
+	position:absolute;
+	z-index:999999999;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background:#fff;
+	filter:alpha(opacity=90);
+	text-align:center !important;
+	font-size:50px !important;
+	font-family:arial !important;
+}
+.old-browser-warning p{
+	position:relative;
+	top:25%;
+	color:#000 !important;
+	line-height:1.5em;
+}
+.old-browser-warning p b{
+	color:#000 !important;
+	font-weight:bold !important;
+}

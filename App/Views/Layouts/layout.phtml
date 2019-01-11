@@ -1,0 +1,33 @@
+<?php /** @var $this \MvcCore\View */ ?><!DOCTYPE HTML>
+<html lang="<?php echo $this->Localization; ?>">
+	<head>
+		<meta charset="UTF-8" />
+		<title><?php echo $this->Title; ?> | MvcCore</title>
+		<base href="<?php echo $this->BasePath; ?>" />
+		<link rel="shortcut icon" href="<?php echo $this->AssetUrl('/static/img/favicon.ico'); ?>" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<script>var timestamp=+new Date;(function(a,b,c,d,e,f){if(b[c]('Opera'))b=b[d](e,f);if(b[c]('Trident/'))b=b[d](/ rv:([0-9\.]*)\)/g,e+'$1)');a.setAttribute('data-browser',b);a.className=f;})(document.documentElement,navigator.userAgent,'match','replace',' MSIE ','')</script>
+		<?php echo $this->Css('fixedHead')->Render(); ?>
+		<?php echo $this->Js('fixedHead')->Render(); ?>
+		<meta name="author" content="Tom Flidr <tomflidr(at)gmail(dot)com>" />
+	</head>
+	<body>
+		<!--[if lt IE 9]><div class="old-browser-warning"><p>Your browser is <b>very</b> old. <br />Please install any actual browser, for example <br /><a href="https://www.google.com/chrome" target="_blank">Google Chrome</a>, <a href="https://www.apple.com/safari" target="_blank">Apple Safari</a> or <a href="https://www.mozilla.org/en/firefox/new" target="_blank">Mozilla Firefox</a>.</p></div><![endif]-->
+		
+		<div class="master-container">
+			
+			<?php if ($this->SignOutForm) echo $this->SignOutForm->Render(); ?>
+			
+			<div class="content route-<?php echo $this->CurrentRouteCssClass; ?>">
+				<?php echo $this->GetContent(); ?>
+			</div>
+			<?php echo $this->RenderLayout('layout/footer.localization-navigation'); ?>
+			<?php echo $this->RenderLayout('layout/footer.media-navigation'); ?>
+
+		</div>
+
+	</body>
+	<?php echo $this->Js('varFoot')->Render(); ?>
+</html>

@@ -1,0 +1,30 @@
+@font-face{
+	font-family:'MyriadRegular';
+	src:url('<?php echo $this->AssetUrl('/static/fonts/myriadwebpro/myriadwebpro-regular-webfont.eot'); ?>');
+	src:url('<?php echo $this->AssetUrl('/static/fonts/myriadwebpro/myriadwebpro-regular-webfont.eot'); ?>?#iefix') format('embedded-opentype'),
+		url('<?php echo $this->AssetUrl('/static/fonts/myriadwebpro/myriadwebpro-regular-webfont.woff'); ?>') format('woff'),
+		url('<?php echo $this->AssetUrl('/static/fonts/myriadwebpro/myriadwebpro-regular-webfont.ttf'); ?>') format('truetype'),
+		url('<?php echo $this->AssetUrl('/static/fonts/myriadwebpro/myriadwebpro-regular-webfont.svg'); ?>#MyriadRegular') format('svg');
+	font-weight:normal;
+	font-style:normal;
+}
+@font-face{
+	font-family:'MyriadSemiBold';
+	src:url('<?php echo $this->AssetUrl('/static/fonts/myriadwebpro/myriadwebpro-semibold-webfont.eot'); ?>');
+	src:url('<?php echo $this->AssetUrl('/static/fonts/myriadwebpro/myriadwebpro-semibold-webfont.eot'); ?>?#iefix') format('embedded-opentype'),
+		url('<?php echo $this->AssetUrl('/static/fonts/myriadwebpro/myriadwebpro-semibold-webfont.woff'); ?>') format('woff'),
+		url('<?php echo $this->AssetUrl('/static/fonts/myriadwebpro/myriadwebpro-semibold-webfont.ttf'); ?>') format('truetype'),
+		url('<?php echo $this->AssetUrl('/static/fonts/myriadwebpro/myriadwebpro-semibold-webfont.svg'); ?>#MyriadSemiBold') format('svg');
+	font-weight:bolder;
+	font-style:normal;
+}
+@font-face{
+	font-family:'MyriadBold';
+	src:url('<?php echo $this->AssetUrl('/static/fonts/myriadwebpro/myriadwebpro-bold-webfont.eot'); ?>');
+	src:url('<?php echo $this->AssetUrl('/static/fonts/myriadwebpro/myriadwebpro-bold-webfont.eot'); ?>?#iefix') format('embedded-opentype'),
+		url('<?php echo $this->AssetUrl('/static/fonts/myriadwebpro/myriadwebpro-bold-webfont.woff'); ?>') format('woff'),
+		url('<?php echo $this->AssetUrl('/static/fonts/myriadwebpro/myriadwebpro-bold-webfont.ttf'); ?>') format('truetype'),
+		url('<?php echo $this->AssetUrl('/static/fonts/myriadwebpro/myriadwebpro-bold-webfont.svg'); ?>#MyriadBold') format('svg');
+	font-weight:bold;
+	font-style:normal;
+}

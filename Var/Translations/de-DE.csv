@@ -1,0 +1,30 @@
+CD Collection;CD-Sammlung
+Use login: "{0}" and password: "{1}".;Verwenden Sie Benutzer: "{0}" und Passwort: "{1}".
+User;Benutzer
+Password;Passwort
+Sign In;Einloggen
+Error {0};Error {0}
+Oooops!;Hoppla!
+Log Out;Ausloggen
+New album;Neues Album
+Id;Id
+Title;Titel
+Interpret;Interpretieren
+Year;Jahr
+Delete;Löschen
+Back to list;Zurück zur Liste
+Title:;Titel:
+Interpret:;Interpretieren:
+Year:;Jahr:
+Save;Speichern
+Edit album - {0};Album bearbeiten - {0}
+Edit album;Album bearbeiten
+Display:;Anzeige:
+Change language:;Sprache:
+Language: es-ES;Spanisch
+Language: ru-RU;Russisch
+Language: cs-CZ;Tschechisch
+Language: en-US;Englisch
+Language: de-DE;Deutsch
+mobile;mobile
+full;computer

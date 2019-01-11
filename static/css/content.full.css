@@ -1,0 +1,11 @@
+form.signin{width:75%;}
+
+form.signout{margin:0 25px 10px 25px;color:#fff;}
+form.signout button[type=submit]{color:#fff !important;border-bottom:1px solid #fff !important;}
+
+form#detail{width:75%;}
+form#detail label span{display:inline-block;width:125px;text-align:right;padding-right:10px;}
+form#detail input{width:250px;margin-bottom:10px;}
+form#detail input.year{width:100px;}
+html[lang=ru-RU] form#detail input.year{width:112px;}
+form#detail button.send{margin-left:135px;}

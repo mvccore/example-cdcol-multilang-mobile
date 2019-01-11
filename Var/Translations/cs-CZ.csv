@@ -1,0 +1,30 @@
+CD Collection;CD kolekce
+Use login: "{0}" and password: "{1}".;Použijte uživatele: "{0}" a heslo: "{1}".
+User;Uživatel
+Password;Heslo
+Sign In;Přihlásit
+Error {0};Chyba {0}
+Oooops!;Jejda!
+Log Out;Odhlásit
+New album;Nové album
+Id;Id
+Title;Název
+Interpret;Interpret
+Year;Rok
+Delete;Smazat
+Back to list;Zpět na seznam
+Title:;Název:
+Interpret:;Interpret:
+Year:;Rok:
+Save;Uložit
+Edit album - {0};Editovat album - {0}
+Edit album;Editovat album
+Display:;Zobrazení:
+Change language:;Změnit jazyk:
+Language: de-DE;Německy
+Language: es-ES;Španělsky
+Language: ru-RU;Rusky
+Language: cs-CZ;Česky
+Language: en-US;Anglicky
+mobile;mobil
+full;počítač

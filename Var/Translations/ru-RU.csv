@@ -1,0 +1,30 @@
+CD Collection;Коллекция альбомов
+Use login: "{0}" and password: "{1}".;Используйте имя пользователя "{0}" и пароль "{1}".
+User;Пользователь
+Password;Пароль
+Sign In;Вход
+Error {0};Ошибка {0}
+Oooops!;Возглас!
+Log Out;Выйти
+New album;Новый альбом
+Id;Id
+Title;Заголовок
+Interpret;Истолковывать
+Year;Год
+Delete;Удалять
+Back to list;Вернуться к списку
+Title:;Заголовок:
+Interpret:;Истолковывать:
+Year:;Год:
+Save;Сохранить
+Edit album - {0};Редактировать альбом - {0}
+Edit album;Редактировать альбом
+Display:;дисплей:
+Change language:;изменение языка:
+Language: de-DE;немецкий
+Language: es-ES;испанский
+Language: cs-CZ;чешский
+Language: en-US;английский
+Language: ru-RU;русский
+mobile;мобильный
+full;полный

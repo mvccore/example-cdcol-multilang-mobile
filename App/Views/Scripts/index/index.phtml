@@ -1,0 +1,7 @@
+<?php
+	/** @var $this \MvcCore\View */
+	/** @var $this->SingInForm \MvcCore\Ext\Auths\SignInForm */
+?>
+<h1><?php echo $this->Title; ?></h1>
+<p><?php echo $this->Translate('Use login: "{0}" and password: "{1}".', ['admin', 'demo']); ?></p>
+<?php echo $this->SignInForm->Render(); ?>

@@ -1,0 +1,38 @@
+form.signin{margin:15px auto 0 auto;text-align:center;}
+form.signin button{margin:10px auto 0 auto;}
+form.signin input{width:200px;margin:5px auto;}
+
+form.signout{height:21px;text-align:right;}
+form.signout button[type=submit]{margin-left:5px;}
+form.signout button[type=submit]:hover,
+form.signout button[type=submit]:focus,
+form.signout button[type=submit]:active{border-bottom:0 !important;}
+
+form.signout button[type=submit],
+form.delete input[type=submit]{background:transparent;border:0;padding:0;}
+a,
+form.signout button[type=submit],
+form.delete input[type=submit]{color:#3d497f;border-bottom:1px solid #3d497f;font-family:'MyriadRegular';text-decoration:none;cursor:pointer;}
+a:hover,
+a:focus,
+a:active,
+form.signout button[type=submit]:hover,
+form.signout button[type=submit]:focus,
+form.signout button[type=submit]:active,
+form.delete input[type=submit]:hover,
+form.delete input[type=submit]:focus,
+form.delete input[type=submit]:active{color:#263b97;border-bottom:1px solid transparent;}
+a:visited{color:#633d7f;border-bottom:1px solid #633d7f;}
+a:visited:hover,a:visited:focus,a:visited:active{color:#263b97;border-bottom:1px solid transparent;}
+
+.cd-collection-items{width:75%;}
+.cd-collection-items th,
+.cd-collection-items td{text-align:left;}
+.cd-collection-items th.right,
+.cd-collection-items td.right{text-align:right;}
+.cd-collection-items th.center,
+.cd-collection-items td.center{text-align:center;}
+.cd-collection-items td{white-space:nowrap;}
+
+form#detail{margin:20px auto;}
+form#detail label{display:block;text-align:left;}

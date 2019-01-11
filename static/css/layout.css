@@ -1,0 +1,14 @@
+html,body{margin:0;font-family:'MyriadRegular',Arial,Helvetica,sans-serif;line-height:1.5em;font-size:16px;}
+
+.clear{clear:both;}
+
+div.errors{margin-bottom:10px;}
+div.error{color:#ff2222;font-family:'MyriadSemiBold';text-align:center;}
+input.error,select.error,textarea.error{text-align:left;}
+
+.content h1{font-family:'MyriadBold';font-size:32px;}
+.content.route-index-index{text-align:center;}
+
+.mc-footer-navigation{font-size:70%;text-align:center;line-height:1.5em;}
+.mc-footer-navigation-localization{margin-top:10px;}
+

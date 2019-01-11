@@ -1,0 +1,481 @@
+/* form control common styles */
+form.theme{
+	padding:33px;
+	position:relative;
+	z-index:200;
+	display:block;
+	color:#fff;
+	background-color:transparent;
+	background:url('<?php echo $this->AssetUrl('/static/img/theme/box-bg.min.svg'); ?>');
+	box-shadow:0 0 15px #eaecf5,0 0 15px rgba(234,236,245,0.75);
+}
+form.theme input,
+form.theme button,
+form.theme textarea,
+form.theme select,
+form.theme div,
+form.theme table,
+form.theme fieldset {
+	position:relative;
+	z-index:202;
+}
+form.theme:before,
+form.theme::before {
+	display:block;
+	content:'';
+	position:absolute;
+	z-index:201;
+	top:3px;
+	left:3px;
+	width:calc(100% - 6px);
+	height:calc(100% - 6px);
+	background-color:#15215a;
+	background-image:url('<?php echo $this->AssetUrl('/static/img/theme/box-dark-dots-bg.min.svg'); ?>');
+}
+
+/* all controls */
+form.theme input[type=text],
+form.theme input[type=password],
+form.theme input[type=number],
+form.theme input[type=email],
+form.theme input[type=search],
+form.theme input[type=tel],
+form.theme input[type=url],
+form.theme input[type*=date],
+form.theme input[type=month],
+form.theme input[type=time],
+form.theme input[type=week],
+form.theme input[type=submit],
+form.theme input[type=reset],
+form.theme input[type=image],
+form.theme input[type=button],
+form.theme button,
+form.theme textarea,
+form.theme select{
+	font-size:16px;
+	color:#17171a;
+	text-shadow:1px 1px 0 #fff;
+	border:0;
+	background-repeat:no-repeat;
+	background-color:transparent;
+	background-size:100% 100%;
+	height:30px;
+	line-height:30px;
+}
+form.theme input[type=radio],
+form.theme input[type=checkbox],
+form.theme label{
+	color:#fff;
+	cursor:pointer;
+	text-shadow:-1px -1px 0 #000;
+}
+/* all controls - common fixes */
+form.theme input[type=search]{
+	height:30px;
+}
+html[data-browser*='MSIE 10.'] form.theme input[type=search],
+html[data-browser*='MSIE 11.'] form.theme input[type=search]{
+	height:20px;
+}
+/* text-like controls */
+form.theme input[type=text],
+form.theme input[type=password],
+form.theme input[type=email],
+form.theme input[type=search],
+form.theme input[type=tel],
+form.theme input[type=url]{
+	padding:6px 10px 4px 10px;
+}
+form.theme input[type=color]{
+	border:0;
+	background-repeat:no-repeat;
+	background-color:transparent;
+	background-size:100% 100%;
+	width:50px;
+}
+html[data-browser*='MSIE 10.'] form.theme input[type=color],
+html[data-browser*='MSIE 11.'] form.theme input[type=color],
+html[data-browser*='Edge/'] form.theme input[type=color]{
+	height:20px;
+	line-height:20px;
+	padding:5px;
+}
+html[data-browser*='Firefox'] form.theme input[type=color]{
+	height:30px;
+	line-height:30px;
+	padding:5px;
+}
+html[data-browser*='Chrome'] form.theme input[type=color]{
+	height:28px;
+	line-height:28px;
+	padding:1px 3px;
+}
+form.theme textarea{
+	padding:10px;
+	height:100px;
+	overflow:auto;
+	-ms-overflow-style:auto;
+}
+/* text-like controls with advanced sub controls */
+form.theme input[type=number],
+form.theme input[type*=date],
+form.theme input[type=month],
+form.theme input[type=time],
+form.theme input[type=week]{
+	padding:6px 3px 4px 10px;
+}
+form.theme input[type=file]{
+	height:40px;
+}
+/* select */
+form.theme select{
+	height:40px;
+	background-repeat:no-repeat;
+	background-color:transparent;
+	background-size:100% 100%;
+	padding:5px 40px 5px 10px;
+	-webkit-appearance:none;
+	-moz-appearance:none;
+	-khtml-appearance:none;
+	-o-appearance:none;
+	-ms-appearance:none;
+	appearance:none;
+	cursor:pointer;
+}
+html[data-browser*='MSIE'] form.theme select,
+html[data-browser*='Edge/'] form.theme select{ 
+	text-shadow:none;
+}
+html[data-browser*='MSIE 9.'] form.theme select{ 
+	padding-right:6px;
+}
+form.theme select::-ms-expand{ 
+	display:none;/* hide the default arrow in ie10 and ie11 */
+}
+/* buttons */
+form.theme input[type=submit],
+form.theme input[type=reset],
+form.theme input[type=image],
+form.theme input[type=button],
+form.theme button{
+	font-weight:bold;
+	height:40px;
+	line-height:21px;
+	padding:0 20px 0 20px;
+	cursor:pointer;
+	text-shadow:1px 1px 0 #fff;
+	cursor:pointer;
+	color:#1b4595;
+}
+form.theme input.big[type=submit],
+form.theme input.big[type=reset],
+form.theme input.big[type=image],
+form.theme input.big[type=button],
+form.theme button.big{
+	font-size:20px;
+	font-weight:bold;
+	height:50px;
+	line-height:31px;
+	padding:0 30px 0 30px;
+	cursor:pointer;
+	text-shadow:1px 1px 0 #fff;
+}
+/* 9-slice scaled svg background images */
+form.theme input[type=text],
+form.theme input[type=password],
+form.theme input[type=number],
+form.theme input[type=email],
+form.theme input[type=search],
+form.theme input[type=tel],
+form.theme input[type=url],
+form.theme input[type=color],
+form.theme input[type*=date],
+form.theme input[type=month],
+form.theme input[type=time],
+form.theme input[type=week],
+form.theme textarea{
+	background-image:url('<?php echo $this->AssetUrl('/static/img/theme/text-inputs.normal.passive.min.svg'); ?>');
+}
+form.theme input.error[type=text],
+form.theme input.error[type=password],
+form.theme input.error[type=number],
+form.theme input.error[type=email],
+form.theme input.error[type=search],
+form.theme input.error[type=tel],
+form.theme input.error[type=url],
+form.theme input.error[type=color],
+form.theme input.error[type*=date],
+form.theme input.error[type=month],
+form.theme input.error[type=time],
+form.theme input.error[type=week],
+form.theme textarea.error{
+	background-image:url('<?php echo $this->AssetUrl('/static/img/theme/text-inputs.error.passive.min.svg'); ?>');
+}
+form.theme input[type=text][required],
+form.theme input[type=password][required],
+form.theme input[type=number][required],
+form.theme input[type=email][required],
+form.theme input[type=search][required],
+form.theme input[type=tel][required],
+form.theme input[type=url][required],
+form.theme input[type=color][required],
+form.theme input[type*=date][required],
+form.theme input[type=month][required],
+form.theme input[type=time][required],
+form.theme input[type=week][required],
+form.theme textarea[required]{
+	background-image:url('<?php echo $this->AssetUrl('/static/img/theme/text-inputs.normal.passive.required.min.svg'); ?>');
+}
+form.theme input.error[type=text][required],
+form.theme input.error[type=password][required],
+form.theme input.error[type=number][required],
+form.theme input.error[type=email][required],
+form.theme input.error[type=search][required],
+form.theme input.error[type=tel][required],
+form.theme input.error[type=url][required],
+form.theme input.error[type=color][required],
+form.theme input.error[type*=date][required],
+form.theme input.error[type=month][required],
+form.theme input.error[type=time][required],
+form.theme input.error[type=week][required],
+form.theme textarea.error[required]{
+	background-image:url('<?php echo $this->AssetUrl('/static/img/theme/text-inputs.error.passive.required.min.svg'); ?>');
+}
+form.theme input[readonly],
+form.theme textarea[readonly]{
+	background-image:url('<?php echo $this->AssetUrl('/static/img/theme/text-inputs.normal.passive.min.svg'); ?>') !important;
+}
+form.theme select{
+	background-image:url('<?php echo $this->AssetUrl('/static/img/theme/select.normal.passive.min.svg'); ?>');
+}
+form.theme select.error{
+	background-image:url('<?php echo $this->AssetUrl('/static/img/theme/select.error.passive.min.svg'); ?>');
+}
+form.theme select[required]{
+	background-image:url('<?php echo $this->AssetUrl('/static/img/theme/select.normal.passive.required.min.svg'); ?>');
+}
+form.theme select.error[required]{
+	background-image:url('<?php echo $this->AssetUrl('/static/img/theme/select.error.passive.required.min.svg'); ?>');
+}
+form.theme select[readonly]{
+	background-image:url('<?php echo $this->AssetUrl('/static/img/theme/select.normal.passive.min.svg'); ?>') !important;
+}
+form.theme input[type=submit],
+form.theme input[type=reset],
+form.theme input[type=image],
+form.theme input[type=button],
+form.theme button{
+	background-image:url('<?php echo $this->AssetUrl('/static/img/theme/buttons-form.passive.min.svg'); ?>');
+}
+
+
+/* hovering and focusing */
+
+form.theme input[type=text]:hover,form.theme input[type=text]:focus,form.theme input[type=text]:active,
+form.theme input[type=password]:hover,form.theme input[type=password]:focus,form.theme input[type=password]:active,
+form.theme input[type=number]:hover,form.theme input[type=number]:focus,form.theme input[type=number]:active,
+form.theme input[type=email]:hover,form.theme input[type=email]:focus,form.theme input[type=email]:active,
+form.theme input[type=search]:hover,form.theme input[type=search]:focus,form.theme input[type=search]:active,
+form.theme input[type=tel]:hover,form.theme input[type=tel]:focus,form.theme input[type=tel]:active,
+form.theme input[type=url]:hover,form.theme input[type=url]:focus,form.theme input[type=url]:active,
+form.theme input[type=color]:hover,form.theme input[type=color]:focus,form.theme input[type=color]:active,
+form.theme input[type*=date]:hover,form.theme input[type*=date]:focus,form.theme input[type*=date]:active,
+form.theme input[type=month]:hover,form.theme input[type=month]:focus,form.theme input[type=month]:active,
+form.theme input[type=time]:hover,form.theme input[type=time]:focus,form.theme input[type=time]:active,
+form.theme input[type=week]:hover,form.theme input[type=week]:focus,form.theme input[type=week]:active,
+form.theme textarea:hover,form.theme textarea:focus,form.theme textarea:active{
+	color:#000;
+	outline:none;
+	text-shadow:none;
+	background-image:url('<?php echo $this->AssetUrl('/static/img/theme/text-inputs.normal.active.min.svg'); ?>');
+}
+form.theme input.error[type=text]:hover,form.theme input.error[type=text]:focus,form.theme input.error[type=text]:active,
+form.theme input.error[type=password]:hover,form.theme input.error[type=password]:focus,form.theme input.error[type=password]:active,
+form.theme input.error[type=number]:hover,form.theme input.error[type=number]:focus,form.theme input.error[type=number]:active,
+form.theme input.error[type=email]:hover,form.theme input.error[type=email]:focus,form.theme input.error[type=email]:active,
+form.theme input.error[type=search]:hover,form.theme input.error[type=search]:focus,form.theme input.error[type=search]:active,
+form.theme input.error[type=tel]:hover,form.theme input.error[type=tel]:focus,form.theme input.error[type=tel]:active,
+form.theme input.error[type=url]:hover,form.theme input.error[type=url]:focus,form.theme input.error[type=url]:active,
+form.theme input.error[type=color]:hover,form.theme input.error[type=color]:focus,form.theme input.error[type=color]:active,
+form.theme input.error[type*=date]:hover,form.theme input.error[type*=date]:focus,form.theme input[type*=date]:active,
+form.theme input.error[type=month]:hover,form.theme input.error[type=month]:focus,form.theme input.error[type=month]:active,
+form.theme input.error[type=time]:hover,form.theme input.error[type=time]:focus,form.theme input.error[type=time]:active,
+form.theme input.error[type=week]:hover,form.theme input.error[type=week]:focus,form.theme input.error[type=week]:active,
+form.theme textarea.error:hover,form.theme textarea.error:focus,form.theme textarea.error:active{
+	color:#000;
+	outline:none;
+	text-shadow:none;
+	background-image:url('<?php echo $this->AssetUrl('/static/img/theme/text-inputs.error.active.min.svg'); ?>');
+}
+form.theme input[type=text][required]:hover,form.theme input[type=text][required]:focus,form.theme input[type=text][required]:active,
+form.theme input[type=password][required]:hover,form.theme input[type=password][required]:focus,form.theme input[type=password][required]:active,
+form.theme input[type=number][required]:hover,form.theme input[type=number][required]:focus,form.theme input[type=number][required]:active,
+form.theme input[type=email][required]:hover,form.theme input[type=email][required]:focus,form.theme input[type=email][required]:active,
+form.theme input[type=search][required]:hover,form.theme input[type=search][required]:focus,form.theme input[type=search][required]:active,
+form.theme input[type=tel][required]:hover,form.theme input[type=tel][required]:focus,form.theme input[type=tel][required]:active,
+form.theme input[type=url][required]:hover,form.theme input[type=url][required]:focus,form.theme input[type=url][required]:active,
+form.theme input[type=color][required]:hover,form.theme input[type=color][required]:focus,form.theme input[type=color][required]:active,
+form.theme input[type*=date][required]:hover,form.theme input[type*=date][required]:focus,form.theme input[type*=date][required]:active,
+form.theme input[type=month][required]:hover,form.theme input[type=month][required]:focus,form.theme input[type=month][required]:active,
+form.theme input[type=time][required]:hover,form.theme input[type=time][required]:focus,form.theme input[type=time][required]:active,
+form.theme input[type=week][required]:hover,form.theme input[type=week][required]:focus,form.theme input[type=week][required]:active,
+form.theme textarea[required]:hover,form.theme textarea[required]:focus,form.theme textarea[required]:active{
+	color:#000;
+	outline:none;
+	text-shadow:none;
+	background-image:url('<?php echo $this->AssetUrl('/static/img/theme/text-inputs.normal.active.required.min.svg'); ?>');
+}
+form.theme input.error[type=text][required]:hover,form.theme input.error[type=text][required]:focus,form.theme input.error[type=text][required]:active,
+form.theme input.error[type=password][required]:hover,form.theme input.error[type=password][required]:focus,form.theme input.error[type=password][required]:active,
+form.theme input.error[type=number][required]:hover,form.theme input.error[type=number][required]:focus,form.theme input.error[type=number][required]:active,
+form.theme input.error[type=email][required]:hover,form.theme input.error[type=email][required]:focus,form.theme input.error[type=email][required]:active,
+form.theme input.error[type=search][required]:hover,form.theme input.error[type=search][required]:focus,form.theme input.error[type=search][required]:active,
+form.theme input.error[type=tel][required]:hover,form.theme input.error[type=tel][required]:focus,form.theme input.error[type=tel][required]:active,
+form.theme input.error[type=url][required]:hover,form.theme input.error[type=url][required]:focus,form.theme input.error[type=url][required]:active,
+form.theme input.error[type=color][required]:hover,form.theme input.error[type=color][required]:focus,form.theme input.error[type=color][required]:active,
+form.theme input.error[type*=date][required]:hover,form.theme input.error[type*=date][required]:focus,form.theme input.error[type*=date][required]:active,
+form.theme input.error[type=month][required]:hover,form.theme input.error[type=month][required]:focus,form.theme input.error[type=month][required]:active,
+form.theme input.error[type=time][required]:hover,form.theme input.error[type=time][required]:focus,form.theme input.error[type=time][required]:active,
+form.theme input.error[type=week][required]:hover,form.theme input.error[type=week][required]:focus,form.theme input.error[type=week][required]:active,
+form.theme textarea.error[required]:hover,form.theme textarea.error[required]:focus,form.theme textarea.error[required]:active{
+	color:#000;
+	outline:none;
+	text-shadow:none;
+	background-image:url('<?php echo $this->AssetUrl('/static/img/theme/text-inputs.error.active.required.min.svg'); ?>');
+}
+form.theme select:hover,form.theme select:focus,form.theme select:active{
+	color:#000;
+	outline:none;
+	text-shadow:none;
+	background-image:url('<?php echo $this->AssetUrl('/static/img/theme/select.normal.active.min.svg'); ?>');
+}
+form.theme select.error:hover,form.theme select.error:focus,form.theme select.error:active{
+	color:#000;
+	outline:none;
+	text-shadow:none;
+	background-image:url('<?php echo $this->AssetUrl('/static/img/theme/select.error.active.min.svg'); ?>');
+}
+form.theme select[required]:hover,form.theme select[required]:focus,form.theme select[required]:active{
+	color:#000;
+	outline:none;
+	text-shadow:none;
+	background-image:url('<?php echo $this->AssetUrl('/static/img/theme/select.normal.active.required.min.svg'); ?>');
+}
+form.theme select.error[required]:hover,form.theme select.error[required]:focus,form.theme select.error[required]:active{
+	color:#000;
+	outline:none;
+	text-shadow:none;
+	background-image:url('<?php echo $this->AssetUrl('/static/img/theme/select.error.active.required.min.svg'); ?>');
+}
+form.theme input[type=submit]:hover,form.theme input[type=submit]:focus,form.theme input[type=submit]:active,
+form.theme input[type=reset]:hover,form.theme input[type=reset]:focus,form.theme input[type=reset]:active,
+form.theme input[type=image]:hover,form.theme input[type=image]:focus,form.theme input[type=image]:active,
+form.theme input[type=button]:hover,form.theme input[type=button]:focus,form.theme input[type=button]:active,
+form.theme button:hover,form.theme button:focus,form.theme button:active{
+	color:#0056d6;
+	outline:none;
+	background-image:url('<?php echo $this->AssetUrl('/static/img/theme/buttons-form.active.min.svg'); ?>');
+}
+
+
+/* selected text & required */
+
+/* developer.mozilla.org/en-US/docs/Web/CSS/::selection */
+form.theme input::-moz-selection{
+	background:#263b97;
+	color:#fff;
+}
+form.theme input::selection{
+	background:#263b97;
+	color:#fff;
+}
+form.theme select::-moz-selection{
+	background:#263b97;
+	color:#fff;
+} 
+form.theme select::selection{
+	background:#263b97;
+	color:#fff;
+}
+form.theme textarea::-moz-selection {
+	background:#263b97;
+	color:#fff;
+}
+form.theme textarea::selection {
+	background:#263b97;
+	color:#fff;
+}
+form.theme input.required::after,
+form.theme input[required=required]::after{
+	content:'*';
+	color:#fff;
+	font-size:14px;
+	font-weight:bold;
+}
+
+
+/* placeholders */
+
+/* stackoverflow.com/questions/2610497 */
+::-webkit-input-placeholder{/* WebKit, Blink, Edge */
+	color:#a4abc5 !important;
+	text-shadow:1px 1px 0 #fff;
+}
+:-moz-placeholder{/* Mozilla Firefox 4 to 18 */
+	color:#a4abc5 !important;
+	text-shadow:1px 1px 0 #fff;
+	opacity:1;
+}
+::-moz-placeholder{/* Mozilla Firefox 19+ */
+	color:#a4abc5 !important;
+	text-shadow:1px 1px 0 #fff;
+	opacity:1;
+}
+:-ms-input-placeholder{/* Internet Explorer 10-11 */
+	color:#a4abc5 !important;
+	text-shadow:1px 1px 0 #fff;
+}
+::-ms-input-placeholder{/* Microsoft Edge */
+	color:#a4abc5 !important;
+	text-shadow:1px 1px 0 #fff;
+}
+::placeholder{/* Most modern browsers support this now. */
+	color:#a4abc5;
+	text-shadow:1px 1px 0 #fff;
+}
+
+
+/* misc - readonly, html5 datalists, background preloading */
+
+form.theme input[readonly],
+form.theme select[readonly],
+form.theme textarea[readonly]{
+	color:#515874 !important;
+	font-style:italic;
+	text-shadow:1px 1px 0 #fff !important;
+}
+form.theme datalist{
+	position:absolute;
+	visibility:hidden;
+}
+form.theme:after,
+form.theme::after{
+	position:absolute;
+	overflow:hidden;
+	width:0;
+	height:0;
+	z-index:-1;
+	content:url('<?php echo $this->AssetUrl('/static/img/theme/buttons-form.active.min.svg'); ?>') 
+			url('<?php echo $this->AssetUrl('/static/img/theme/text-inputs.normal.active.min.svg'); ?>') 
+			url('<?php echo $this->AssetUrl('/static/img/theme/text-inputs.normal.active.required.min.svg'); ?>') 
+			url('<?php echo $this->AssetUrl('/static/img/theme/text-inputs.error.passive.min.svg'); ?>') 
+			url('<?php echo $this->AssetUrl('/static/img/theme/text-inputs.error.passive.required.min.svg'); ?>') 
+			url('<?php echo $this->AssetUrl('/static/img/theme/text-inputs.error.active.min.svg'); ?>') 
+			url('<?php echo $this->AssetUrl('/static/img/theme/text-inputs.error.active.required.min.svg'); ?>') /*
+			url('<?php echo $this->AssetUrl('/static/img/theme/select.normal.active.min.svg'); ?>') 
+			url('<?php echo $this->AssetUrl('/static/img/theme/select.normal.active.required.min.svg'); ?>') 
+			url('<?php echo $this->AssetUrl('/static/img/theme/select.error.passive.min.svg'); ?>') 
+			url('<?php echo $this->AssetUrl('/static/img/theme/select.error.passive.required.min.svg'); ?>') 
+			url('<?php echo $this->AssetUrl('/static/img/theme/select.error.active.min.svg'); ?>') 
+			url('<?php echo $this->AssetUrl('/static/img/theme/select.error.active.required.min.svg'); ?>') */;
+}

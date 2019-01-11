@@ -1,0 +1,33 @@
+<?php
+	/** @var $this \MvcCore\View */
+
+	/** @var $router \MvcCore\Ext\Routers\ILocalization */
+	$router = $this->controller->GetRouter();
+	/** @var $request \MvcCore\Request */
+	$request = $this->controller->GetRequest();
+	
+	$currentLocalization = $this->Localization;
+	$allowedLocalizations = $router->GetAllowedLocalizations();
+	$localizationsCount = count($allowedLocalizations);
+	$fullUrl = $request->GetFullUrl();
+	$localizationUrlParam = \MvcCore\Ext\Routers\ILocalization::URL_PARAM_LOCALIZATION;
+	$i = 0;
+
+?><div class="mc-footer-navigation mc-footer-navigation-localization"><?php
+	echo '<label>' . $this->Translate('Change language:') . ' </label>';
+	foreach ($allowedLocalizations as $localization):
+		if ($localization == $currentLocalization):
+			?><span><?php
+				echo $this->Translate('Language: ' . $localization); 
+			?></span><?php
+		else:
+			?><a href="<?php echo $this->Url(
+				'self',
+				[$localizationUrlParam  => $localization]
+			); ?>"><?php 
+				echo $this->Translate('Language: ' . $localization); 
+			?></a><?php
+		endif;
+		if (++$i > 0 && $i < $localizationsCount) echo ', ';
+	endforeach;
+?></div>
