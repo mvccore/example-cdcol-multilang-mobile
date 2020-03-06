@@ -2,28 +2,27 @@
 	/** @var $this \MvcCore\View */
 
 	/** @var $router \MvcCore\Ext\Routers\IMedia */
-	$router = $this->controller->GetRouter();
+	$router = $controller->GetRouter();
 	/** @var $request \MvcCore\Request */
-	$request = $this->controller->GetRequest();
+	$request = $controller->GetRequest();
 
-	$currentMediaVersion = $this->MediaSiteVersion;
 	$mediaSiteKeysAndUrlPrefixes = $router->GetAllowedMediaVersionsAndUrlValues();
 	$mediaVersionsCount = count($mediaSiteKeysAndUrlPrefixes);
 	$fullUrl = $request->GetFullUrl();
 	$mediaVersionUrlParam = \MvcCore\Ext\Routers\IMedia::URL_PARAM_MEDIA_VERSION;
-	$i = 0;
+	$index = 0;
 
 ?><div class="mc-footer-navigation mc-footer-navigation-media"><?php
-	echo $this->Translate('Display:') . ' ';
+	echo $translate('Display:') . ' ';
 	foreach ($mediaSiteKeysAndUrlPrefixes as $mediaVersion => $urlPrefix):
-		if ($mediaVersion == $currentMediaVersion):
-			?><span><?php echo $this->Translate($mediaVersion); ?></span><?php
+		if ($mediaVersion == $currentMediaSiteVersion):
+			?><span><?=$translate($mediaVersion)?></span><?php
 		else:
 			?><a href="<?php echo $this->Url(
 				'self',
 				[$mediaVersionUrlParam  => $mediaVersion]
-			); ?>"><?php echo $this->Translate($mediaVersion); ?></a><?php
+			); ?>"><?=$translate($mediaVersion)?></a><?php
 		endif;
-		if (++$i > 0 && $i < $mediaVersionsCount) echo ', ';
+		if (++$index > 0 && $index < $mediaVersionsCount) echo ', ';
 	endforeach;
 ?></div>

@@ -2,29 +2,44 @@
 
 namespace MvcCore\Ext\Models\Translators;
 
-class Csv extends \MvcCore\Model implements \MvcCore\Ext\Models\Translators\ITranslator
+class Csv extends \MvcCore\Model implements \MvcCore\Ext\Models\ITranslator
 {
 	/**
-	 * Relative path to directory with CSV translations, relative to 
+	 * Relative path to directory with CSV translations, relative to
 	 * application root directory. Default value is `/Var/Translations`.
 	 * @var string
 	 */
 	protected static $dataDir = '/Var/Translations';
 
+	/**
+	 * Boolean about write unknown translation keys into data store in development mode.
+	 * @var bool|null
+	 */
 	protected static $writeTranslations = NULL;
+
+	/**
+	 * Store for unknown translation keys for current request to write at the end.
+	 * @var array
+	 */
 	protected static $notTranslatedKeys = [];
+
+	/**
+	 * Boolean about if shutdown handler is registered already to write unknown
+	 * translations in current request.
+	 * @var bool
+	 */
 	protected static $shutdownHandlerRegistered = FALSE;
 
 	/**
-	 * Translator localization - it could be international language code in 
-	 * lower case or (international language code in lower case plus dash and 
+	 * Translator localization - it could be international language code in
+	 * lower case or (international language code in lower case plus dash and
 	 * plus international locale code in upper case).
 	 * @var string|NULL
 	 */
 	protected $localization = NULL;
 
 	/**
-	 * All parsed translations store. Keys are translations keys, value are 
+	 * All parsed translations store. Keys are translations keys, value are
 	 * translated terms and phrases.
 	 * @var array|NULL
 	 */
@@ -32,21 +47,20 @@ class Csv extends \MvcCore\Model implements \MvcCore\Ext\Models\Translators\ITra
 
 	/**
 	 * Get translator instance by localization key (for example: `en`, `en-US`).
-	 * @param string $localization	International language code in lower case or 
-	 *								(international language code in lower case 
-	 *								plus dash and plus international locale code 
+	 * @param string $localization	International language code in lower case or
+	 *								(international language code in lower case
+	 *								plus dash and plus international locale code
 	 *								in upper case).
 	 * @return \MvcCore\Model|\MvcCore\IModel|\MvcCore\Ext\Models\Translators\Csv
 	 */
-	public static function & GetInstance ($args) {
-		$result = parent::GetInstance($args);
-		return $result;
+	public static function GetInstance () {
+		return call_user_func_array('parent::GetInstance', func_get_args());
 	}
 
 	/**
-	 * Configure relative path to directory with CSV translations, relative to 
+	 * Configure relative path to directory with CSV translations, relative to
 	 * application root directory. Default value is `/Var/Translations`.
-	 * @param string $dataDir 
+	 * @param string $dataDir
 	 * @return string
 	 */
 	public static function SetDataDir ($dataDir = '/Var/Translations') {
@@ -54,7 +68,7 @@ class Csv extends \MvcCore\Model implements \MvcCore\Ext\Models\Translators\ITra
 	}
 
 	/**
-	 * Return relative path to directory with CSV translations, relative to 
+	 * Return relative path to directory with CSV translations, relative to
 	 * application root directory.
 	 * @return string
 	 */
@@ -63,12 +77,12 @@ class Csv extends \MvcCore\Model implements \MvcCore\Ext\Models\Translators\ITra
 	}
 
 	/**
-	 * Create new translator instance. To cache translator instance and it's 
-	 * parsed CSV data values inside, use static method: 
+	 * Create new translator instance. To cache translator instance and it's
+	 * parsed CSV data values inside, use static method:
 	 * `\MvcCore\Ext\Models\Translators\Csv::GetInstance('en');`.
-	 * @param string $localization	International language code in lower case or 
-	 *								(international language code in lower case 
-	 *								plus dash and plus international locale code 
+	 * @param string $localization	International language code in lower case or
+	 *								(international language code in lower case
+	 *								plus dash and plus international locale code
 	 *								in upper case).
 	 * @return void
 	 */
@@ -82,9 +96,9 @@ class Csv extends \MvcCore\Model implements \MvcCore\Ext\Models\Translators\ITra
 
 	/**
 	 * Set translator localization (for example as `en` or `en-US` ...).
-	 * @param string $localization	International language code in lower case or 
-	 *								(international language code in lower case 
-	 *								plus dash and plus international locale code 
+	 * @param string $localization	International language code in lower case or
+	 *								(international language code in lower case
+	 *								plus dash and plus international locale code
 	 *								in upper case).
 	 * @return \MvcCore\Ext\Models\Translators\Csv
 	 */
@@ -94,13 +108,27 @@ class Csv extends \MvcCore\Model implements \MvcCore\Ext\Models\Translators\ITra
 	}
 
 	/**
-	 * Get translator localization - it could be international language code in 
-	 * lower case or (international language code in lower case plus dash and 
+	 * Get translator localization - it could be international language code in
+	 * lower case or (international language code in lower case plus dash and
 	 * plus international locale code in upper case).
 	 * @return string
 	 */
 	public function GetLocalization () {
 		return $this->localization;
+	}
+
+	/**
+	 * Basic translation view helper implementation by `__invoke()` megic method.
+	 * Please register translation view helper more better by anonymous closure
+	 * function with `$this->Translate()` function call inside. It's much faster.
+	 * to handle view helper calls to translate strings.
+	 * @param string $key			A key to translate.
+	 * @param array $replacements	An array of replacements to process in translated result.
+	 * @throws \Exception			En exception if translations store is not successful.
+	 * @return string				Translated key or key itself it here is no key in translations store.
+	 */
+	public function __invoke ($translationKey, $replacements = []) {
+		return $this->Translate($translationKey, $replacements);
 	}
 
 	/**
@@ -113,22 +141,22 @@ class Csv extends \MvcCore\Model implements \MvcCore\Ext\Models\Translators\ITra
 	 */
 	public function Translate ($translationKey, $replacements = []) {
 		$result = $translationKey;
-		if ($this->translations === NULL) 
+		if ($this->translations === NULL)
 			$this->translations = $this->LoadTranslationsStore();
 		if (isset($this->translations[$translationKey])) {
 			$result = $this->translations[$translationKey];
 		} else {
 			self::writeNotTranslatedKey($this->localization, $translationKey);
 		}
-		foreach ($replacements as $key => $val) 
+		foreach ($replacements as $key => $val)
 			$result = str_replace('{'.$key.'}', (string) $val, $result);
 		return $result;
 	}
 
 	/**
-	 * Load CSV translation store (result is not cached, this function loads 
+	 * Load CSV translation store (result is not cached, this function loads
 	 * and parse CSV every time is called.
-	 * @throws \Exception 
+	 * @throws \Exception
 	 * @return array
 	 */
 	public function LoadTranslationsStore () {
@@ -136,9 +164,9 @@ class Csv extends \MvcCore\Model implements \MvcCore\Ext\Models\Translators\ITra
 		$appRoot = \MvcCore\Application::GetInstance()->GetRequest()->GetAppRoot() ;
 		$fileFullPath = $appRoot . self::$dataDir . '/' . $this->localization . '.csv';
 		if (!file_exists($fileFullPath)) {
-			if (!self::$writeTranslations) 
+			if (!self::$writeTranslations)
 				self::thrownAnException(
-					"No translations found in path: `$fileFullPath`."
+					"No translations found in path: `{$fileFullPath}`."
 				);
 			$rawCsvRows = [];
 		} else {
@@ -151,7 +179,7 @@ class Csv extends \MvcCore\Model implements \MvcCore\Ext\Models\Translators\ITra
 				$rowKey += 1;
 				self::thrownAnException(
 					"Translation key already defined. "
-					."(path: '$fileFullPath', row: '$rowKey', key: '$key')"
+					."(path: '{$fileFullPath}', row: '{$rowKey}', key: '{$key}')"
 				);
 			}
 			$store[$key] = str_replace('\\n', "\n", $value);
@@ -161,19 +189,18 @@ class Csv extends \MvcCore\Model implements \MvcCore\Ext\Models\Translators\ITra
 
 	/**
 	 * Thrown an exception in CSV store loading process.
-	 * @param string $msg 
-	 * @throws \Exception 
+	 * @param string $msg
+	 * @throws \Exception
 	 * @return void
 	 */
 	protected static function thrownAnException ($msg) {
-		$selfClass = version_compare(PHP_VERSION, '5.5', '>') ? self::class : __CLASS__;
-		throw new \Exception("[".$selfClass."] $msg");
+		throw new \Exception("[".get_class()."] {$msg}");
 	}
 
 	/**
 	 * Add not translated keys into translations CSV after request is terminated.
-	 * @param string $localization 
-	 * @param string $translationKey 
+	 * @param string $localization
+	 * @param string $translationKey
 	 * @return void
 	 */
 	protected static function writeNotTranslatedKey ($localization, $translationKey) {
@@ -183,24 +210,24 @@ class Csv extends \MvcCore\Model implements \MvcCore\Ext\Models\Translators\ITra
 		self::$notTranslatedKeys[$localization][$translationKey] = TRUE;
 		if (self::$shutdownHandlerRegistered) return;
 		\MvcCore\Application::GetInstance()->AddPostDispatchHandler(
-			function (\MvcCore\IRequest & $req, \MvcCore\IResponse & $res) {
+			function (\MvcCore\IRequest $req, \MvcCore\IResponse $res) {
 				if ($req->IsAjax()) return TRUE;
 				/**
-				 * To not run translations write in real background process, 
-				 * comment following line, the line closes connection and also 
+				 * To not run translations write in real background process,
+				 * comment following line, the line closes connection and also
 				 * it kills any tracy debug output:
 				 */
 				$res->SetHeader('Connection', 'close')->SetHeader('Content-Length', strlen($res->GetBody()));
 				return TRUE;
 			}
 		);
-		$staticClassName = version_compare(PHP_VERSION, '5.5', '>') ? static::class : get_called_class();
+		$staticClassName = get_called_class();
 		\MvcCore\Application::GetInstance()->AddPostTerminateHandler(
-			function (\MvcCore\IRequest & $req, & $res) use ($staticClassName) {
+			function (\MvcCore\IRequest $req, $res) use ($staticClassName) {
 				if ($req->IsAjax()) return TRUE;
 				// run in background processes:
 				$app = \MvcCore\Application::GetInstance();
-				$translationsPath = $app->GetRequest()->GetAppRoot() 
+				$translationsPath = $app->GetRequest()->GetAppRoot()
 					. self::$dataDir;
 				$toolsClass = $app->GetToolClass();
 				register_shutdown_function(
@@ -210,7 +237,7 @@ class Csv extends \MvcCore\Model implements \MvcCore\Ext\Models\Translators\ITra
 							$translationKeys = array_keys($translationKeys);
 							$csvFullPath = $translationsPath . '/' . $localization . '.csv';
 							$rawContent = '';
-							if (file_exists($csvFullPath)) 
+							if (file_exists($csvFullPath))
 								$rawContent = trim(file_get_contents($csvFullPath), "\r\n");
 							foreach ($translationKeys as $translationKey)
 								$rawContent .= PHP_EOL . $translationKey . ';+' . $translationKey;

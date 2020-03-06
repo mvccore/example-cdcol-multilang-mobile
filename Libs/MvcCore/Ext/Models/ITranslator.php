@@ -1,6 +1,6 @@
 <?php
 
-namespace MvcCore\Ext\Models\Translators;
+namespace MvcCore\Ext\Models;
 
 interface ITranslator
 {
@@ -12,7 +12,7 @@ interface ITranslator
 	 *								in upper case).
 	 * @return \MvcCore\Model|\MvcCore\IModel|\MvcCore\Ext\Models\ITranslator
 	 */
-	public static function & GetInstance ($args);
+	public static function GetInstance ();
 
 	/**
 	 * Set translator localization (for example as `en` or `en-US` ...).

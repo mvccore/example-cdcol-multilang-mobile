@@ -18,21 +18,20 @@ class Album extends \MvcCore\Model
 	 * @return \MvcCore\Model[]
 	 */
 	public static function GetAll () {
-		$rawData = self::GetDb()->query("
+		$select = self::GetDb()->prepare("
 			SELECT
 				c.id AS Id,
 				c.title AS Title,
 				c.interpret AS Interpret,
 				c.year AS Year
-			FROM 
+			FROM
 				cds AS c
-		")->fetchAll(\PDO::FETCH_ASSOC);
-		$result = [];
-		foreach ($rawData as $rawItem) {
-			$item = (new self)->SetUp($rawItem, TRUE);
-			$result[$item->Id] = $item;
-		}
-		return $result;
+		");
+		$select->execute();
+		$albums = [];
+		while ($album = $select->fetchObject('\App\Models\Album'))
+			$albums[] = $album;
+		return $albums;
 	}
 
 	/**
@@ -47,19 +46,15 @@ class Album extends \MvcCore\Model
 				c.title AS Title,
 				c.interpret AS Interpret,
 				c.year AS Year
-			FROM 
-				cds as c 
+			FROM
+				cds as c
 			WHERE
 				c.id = :id
 		");
 		$select->execute([
 			":id" => $id,
 		]);
-		$data = $select->fetch(\PDO::FETCH_ASSOC);
-		if ($data) {
-			return (new self)->SetUp($data);
-		}
-		return NULL;
+		return $select->fetchObject('\App\Models\Album');
 	}
 
 	/**
@@ -67,6 +62,7 @@ class Album extends \MvcCore\Model
 	 * @return bool
 	 */
 	public function Delete () {
+		$this->Init();
 		$update = $this->db->prepare("
 			DELETE FROM
 				cds
@@ -83,6 +79,7 @@ class Album extends \MvcCore\Model
 	 * @return int
 	 */
 	public function Save () {
+		$this->Init();
 		if (isset($this->Id)) {
 			$this->update();
 		} else {
@@ -121,11 +118,10 @@ class Album extends \MvcCore\Model
 	protected function insert() {
 		$columnsSql = [];
 		$params = [];
-		$newValues = $this->GetValues();
-		foreach ($newValues as $key => & $value) {
+		foreach ($this->GetValues() as $key => $value) {
 			$keyUnderscored = \MvcCore\Tool::GetUnderscoredFromPascalCase($key);
 			$columnsSql[] = $keyUnderscored;
-			$params[$keyUnderscored] = $value;
+			$params[':' . $keyUnderscored] = $value;
 		}
 		$sql = 'INSERT INTO cds (' . implode(',', $columnsSql) . ')
 			 VALUES (:' . implode(', :', $columnsSql) . ')';

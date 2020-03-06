@@ -2,8 +2,8 @@
 
 namespace App\Controllers;
 
-class Base extends \MvcCore\Controller
-{
+class Base extends \MvcCore\Controller {
+
 	/**
 	 * Authenticated user instance is automatically assigned
 	 * by authentication extension before `Controller::Init();`.
@@ -12,7 +12,7 @@ class Base extends \MvcCore\Controller
 	protected $user = NULL;
 
 	/**
-	 * @var \MvcCore\Ext\Routers\MediaAndLocalization 
+	 * @var \MvcCore\Ext\Routers\MediaAndLocalization
 	 */
 	protected $router = NULL;
 
@@ -25,7 +25,7 @@ class Base extends \MvcCore\Controller
 	public function Init() {
 		parent::Init();
 		// when any CSRF token is outdated or not the same - sign out user by default
-		\MvcCore\Ext\Form::AddCsrfErrorHandler(function (\MvcCore\Ext\Form & $form, $errorMsg) {
+		\MvcCore\Ext\Form::AddCsrfErrorHandler(function (\MvcCore\Ext\Form $form, $errorMsg) {
 			\MvcCore\Ext\Auths\Basics\User::LogOut();
 			self::Redirect($this->Url(
 				'Index:Index',
@@ -43,15 +43,17 @@ class Base extends \MvcCore\Controller
 		if ($this->viewEnabled) {
 			$this->_preDispatchSetUpAuth();
 			$this->_preDispatchSetUpBundles();
-			$this->view->MediaSiteVersion = $this->request->GetMediaSiteVersion();
-			$this->view->Localization = $this->router->GetLocalization(TRUE);
-			$this->view->BasePath = $this->GetRequest()->GetBasePath();
-			$this->view->CurrentRouteCssClass = str_replace(
+			$this->view->currentMediaSiteVersion = $this->request->GetMediaSiteVersion();
+			$this->view->currentLocalization = $this->router->GetLocalization(TRUE);
+			$this->view->basePath = $this->request->GetBasePath();
+			$this->view->currentRouteCssClass = str_replace(
 				':', '-', strtolower(
 					$this->router->GetCurrentRoute()->GetName()
 				)
 			);
-			$this->view->SetHelper('Translate', $this->translator);
+			$this->view->SetHelper('translate', function ($key, $replacements = []) {
+				return $this->translator->Translate($key, $replacements);
+			});
 		}
 	}
 
@@ -61,14 +63,14 @@ class Base extends \MvcCore\Controller
 
 	private function _preDispatchSetUpAuth () {
 		// init user in view
-		$this->view->User = $this->user;
+		$this->view->user = $this->user;
 		$authentication = \MvcCore\Ext\Auths\Basic::GetInstance()
 			->SetTranslator(function ($key) {
 				return $this->translator->Translate($key);
 			});
-		if ($this->user) 
+		if ($this->user)
 			// set sign-out form into view, set signed-out url to homepage:
-			$this->view->SignOutForm = $authentication->GetSignOutForm()
+			$this->view->signOutForm = $authentication->GetSignOutForm()
 				->SetValues([
 					'successUrl' => $this->Url('Index:Index', ['absolute' => TRUE])
 				]);

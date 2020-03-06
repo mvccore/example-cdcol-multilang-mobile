@@ -2,15 +2,15 @@
 <html lang="<?php echo $this->Localization; ?>">
 	<head>
 		<meta charset="UTF-8" />
-		<title><?php echo $this->Title; ?> | MvcCore</title>
-		<base href="<?php echo $this->BasePath; ?>" />
-		<link rel="shortcut icon" href="<?php echo $this->AssetUrl('/static/img/favicon.ico'); ?>" />
+		<title><?=$title?> | MvcCore</title>
+		<base href="<?=$basePath?>" />
+		<link rel="shortcut icon" href="<?=$assetUrl('/static/img/favicon.ico')?>" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<script>var timestamp=+new Date;(function(a,b,c,d,e,f){if(b[c]('Opera'))b=b[d](e,f);if(b[c]('Trident/'))b=b[d](/ rv:([0-9\.]*)\)/g,e+'$1)');a.setAttribute('data-browser',b);a.className=f;})(document.documentElement,navigator.userAgent,'match','replace',' MSIE ','')</script>
-		<?php echo $this->Css('fixedHead')->Render(); ?>
-		<?php echo $this->Js('fixedHead')->Render(); ?>
+		<?=$css('fixedHead')?>
+		<?=$js('fixedHead')?>
 		<meta name="author" content="Tom Flidr <tomflidr(at)gmail(dot)com>" />
 	</head>
 	<body>
@@ -18,16 +18,16 @@
 		
 		<div class="master-container">
 			
-			<?php if ($this->SignOutForm) echo $this->SignOutForm->Render(); ?>
+			<?php if (isset($signOutForm)) echo $signOutForm; ?>
 			
-			<div class="content route-<?php echo $this->CurrentRouteCssClass; ?>">
-				<?php echo $this->GetContent(); ?>
+			<div class="content route-<?=$currentRouteCssClass?>">
+				<?=$this->GetContent()?>
 			</div>
-			<?php echo $this->RenderLayout('layout/footer.localization-navigation'); ?>
-			<?php echo $this->RenderLayout('layout/footer.media-navigation'); ?>
+			<?=$this->RenderLayout('layout/footer.localization-navigation')?>
+			<?=$this->RenderLayout('layout/footer.media-navigation')?>
 
 		</div>
 
 	</body>
-	<?php echo $this->Js('varFoot')->Render(); ?>
+	<?=$js('varFoot')?>
 </html>

@@ -39,4 +39,4 @@ CREATE TABLE `users` (
 ) CHARSET=utf8;
 
 INSERT INTO `users` (`id`, `active`, `admin`, `user_name`, `full_name`, `password_hash`) VALUES
-(1,	1,	1,	'admin',	'Administrator',	'$2y$10$czlFNTYvUUg2IWE2OXNKTO8PB5xPGXz9i8IH7Fa7M0YsPlSLriJZu'); -- password is "demo"
+(1,	1,	1,	'admin',	'Administrator',	'$2y$10$s9E56/QH6.a69sJML9aS6enCczRCZcEPrbFh7BYTSrnrn4H9QMF6u'); -- password is "demo"

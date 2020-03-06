@@ -2,22 +2,25 @@
 
 namespace App;
 
-class Bootstrap
-{
-	public static function Init ()
-	{
+class Bootstrap {
+
+	/**
+	 * @return \MvcCore\Application
+	 */
+	public static function Init () {
+
 		$app = \MvcCore\Application::GetInstance();
 
 
 		// Patch core to use extended debug class:
 		if (class_exists('MvcCore\Ext\Debugs\Tracy')) {
-			\MvcCore\Ext\Debugs\Tracy::$Editor = 'MSVS2017';
+			\MvcCore\Ext\Debugs\Tracy::$Editor = 'MSVS2019';
 			$app->SetDebugClass('MvcCore\Ext\Debugs\Tracy');
 		}
 
-		
+
 		/**
-		 * Uncomment this line before generate any assets into temporary directory, before application 
+		 * Uncomment this line before generate any assets into temporary directory, before application
 		 * packing/building, only if you want to pack application without JS/CSS/fonts/images inside
 		 * result PHP package and you want to have all those files placed on hard drive.
 		 * You can use this variant in modes `PHP_PRESERVE_PACKAGE`, `PHP_PRESERVE_HDD` and `PHP_STRICT_HDD`.
@@ -29,11 +32,11 @@ class Bootstrap
 		\MvcCore\Ext\Auths\Basic::GetInstance()
 
 			// Set unique password hash:
-			->SetPasswordHashSalt('s9E56/QH6!a69sJML9aS$6s+')
-			
+			->SetPasswordHashSalt('s9E56/QH6.a69sJML9aS6s')
+
 			// To use credentials from system config file:
 			//->SetUserClass('MvcCore\Ext\Auths\Basics\Users\SystemConfig')
-			
+
 			// To use credentials from database:
 			->SetUserClass('MvcCore\Ext\Auths\Basics\Users\Database')
 
@@ -44,7 +47,7 @@ class Bootstrap
 				'passwordHash'	=> 'password_hash',
 				'fullName'		=> 'full_name',
 			])*/;
-		
+
 		// Display db password hash value by unique password hash for desired user name:
 		//die(\MvcCore\Ext\Auths\Basics\User::EncodePasswordToHash('demo'));
 
@@ -54,7 +57,7 @@ class Bootstrap
 
 		// Set up router localizations and media site versions:
 		/** @var $router \MvcCore\Ext\Routers\MediaAndLocalization */
-		$router = & \MvcCore\Router::GetInstance();
+		$router = \MvcCore\Router::GetInstance();
 		$router
 			->SetAllowedMediaVersionsAndUrlValues([
 				\MvcCore\Ext\Routers\IMedia::MEDIA_VERSION_MOBILE	=> 'm',
@@ -63,13 +66,13 @@ class Bootstrap
 			->SetDefaultLocalization('en-US')
 			->SetAllowedLocalizations(['en-US', 'de-DE', 'ru-RU', 'es-ES', 'cs-CZ'])
 			->SetLocalizationEquivalents([
-				'es-ES' => ['ca-ES', 'gl-ES'], 
+				'es-ES' => ['ca-ES', 'gl-ES'],
 				'ru-RU' => ['tt-RU', 'uk-UA', 'be-BY'],
 				'cs-CZ'	=> ['sk-SK']
 			])
 			->SetAllowNonLocalizedRoutes(TRUE);
 
-		
+
 		// Set up application routes (without custom names),
 		// defined basically as `Controller::Action` combinations:
 		$router->SetRoutes([
@@ -117,5 +120,7 @@ class Bootstrap
 				'constraints'		=> ['id' => '\d+'],
 			]
 		]);
+
+		return $app;
 	}
 }

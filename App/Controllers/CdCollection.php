@@ -6,8 +6,8 @@ use \App\Models,
 	\MvcCore\Ext\Form,
 	\MvcCore\Ext\Forms\Fields;
 
-class CdCollection extends Base
-{
+class CdCollection extends Base {
+
 	/** @var \App\Models\Album */
 	protected $album;
 
@@ -45,7 +45,7 @@ class CdCollection extends Base
 		// try to load album model instance from database
 		$id = $this->GetParam("id", "0-9", NULL, 'int');
 		$this->album = Models\Album::GetById(intval($id));
-		if (!$this->album && $this->actionName == 'edit') 
+		if (!$this->album && $this->actionName == 'edit')
 			$this->renderNotFound();
 	}
 
@@ -58,10 +58,11 @@ class CdCollection extends Base
 	 * @return void
 	 */
 	public function IndexAction () {
-		$this->view->Title = $this->translate('CD Collection');
-		$this->view->Albums = Models\Album::GetAll();
+
+		$this->view->title = $this->translate('CD Collection');
+		$this->view->albums = Models\Album::GetAll();
 		/** @var $abstractForm \MvcCore\Ext\Form */
-		list($this->view->CsrfName, $this->view->CsrfValue)
+		list($this->view->csrfName, $this->view->csrfValue)
 			= $this->getVirtualDeleteForm()->SetUpCsrf();
 		$this->view->Js('varFoot')
 			->Prepend(self::$staticPath . '/js/List.js');
@@ -72,8 +73,8 @@ class CdCollection extends Base
 	 * @return void
 	 */
 	public function CreateAction () {
-		$this->view->Title = $this->translate('New album');
-		$this->view->DetailForm = $this->getCreateEditForm(FALSE);
+		$this->view->title = $this->translate('New album');
+		$this->view->detailForm = $this->getCreateEditForm(FALSE);
 	}
 
 	/**
@@ -83,10 +84,10 @@ class CdCollection extends Base
 	 * @return void
 	 */
 	public function EditAction () {
-		$this->view->Title = $this->translate(
+		$this->view->title = $this->translate(
 			'Edit album - {0}', [$this->album->Title]
 		);
-		$this->view->DetailForm = $this->getCreateEditForm(TRUE)
+		$this->view->detailForm = $this->getCreateEditForm(TRUE)
 			->SetValues($this->album->GetValues(), TRUE, TRUE);
 	}
 
@@ -103,9 +104,10 @@ class CdCollection extends Base
 			$detailForm->SetErrorUrl($this->Url(':Edit', ['id' => $this->album->Id, 'absolute' => TRUE]));
 		}
 		$detailForm->Submit();
-		if ($detailForm->GetResult()) {
-			$this->album->SetUp($detailForm->GetValues(), TRUE)->Save();
-		}
+		if ($detailForm->GetResult()) 
+			$this->album->SetUp(
+				$detailForm->GetValues(), \MvcCore\IModel::KEYS_CONVERSION_UNDERSCORES_TO_PASCALCASE
+			)->Save();
 		$detailForm->SubmittedRedirect();
 	}
 
@@ -116,9 +118,8 @@ class CdCollection extends Base
 	 * @return void
 	 */
 	public function DeleteAction () {
-		if ($this->getVirtualDeleteForm()->SubmitCsrfTokens($_POST)) {
+		if ($this->getVirtualDeleteForm()->SubmitCsrfTokens($_POST)) 
 			$this->album->Delete();
-		}
 		self::Redirect($this->Url(':Index'));
 	}
 

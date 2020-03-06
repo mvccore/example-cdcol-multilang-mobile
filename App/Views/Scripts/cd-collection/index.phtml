@@ -1,14 +1,14 @@
 <?php /** @var $this \MvcCore\View */ ?>
-<?php /** @var $this->Albums \App\Models\Album[] */ ?>
+<?php /** @var $albums \App\Models\Album[] */ ?>
 
-<a class="head-btn btn btn-wide btn-no-visiting" href="<?php
-	echo $this->Url(':Create');
-?>"><span><b><?php echo $this->Translate('New album'); ?></b></span></a>
+<a 
+	class="head-btn btn btn-wide btn-no-visiting" 
+	href="<?=$url(':Create')?>"><span><b><?=$translate('New album')?></b></span></a>
 
-<h1><?php echo $this->Translate('CD Collection'); ?></h1>
+<h1><?=$translate('CD Collection')?></h1>
 
-<?php if (!$this->Albums): ?>
-	<p><?php echo $this->Translate("No albums in database. To create, click to 'New Album' button."); ?></p>
+<?php if (!$albums): ?>
+	<p><?=$translate("No albums in database. To create, click to 'New Album' button.")?></p>
 <?php else: ?>
-	<?php echo $this->RenderScript('./index.table.' . $this->MediaSiteVersion); ?>
+	<?=$this->RenderScript('./index.table.' . $currentMediaSiteVersion)?>
 <?php endif; ?>
