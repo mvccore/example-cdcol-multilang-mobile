@@ -18,7 +18,7 @@ class Album extends \MvcCore\Model
 	 * @return \MvcCore\Model[]
 	 */
 	public static function GetAll () {
-		$select = self::GetDb()->prepare("
+		$select = self::GetConnection()->prepare("
 			SELECT
 				c.id AS Id,
 				c.title AS Title,
@@ -40,7 +40,7 @@ class Album extends \MvcCore\Model
 	 * @return \MvcCore\Model|null
 	 */
 	public static function GetById ($id) {
-		$select = self::GetDb()->prepare("
+		$select = self::GetConnection()->prepare("
 			SELECT
 				c.id AS Id,
 				c.title AS Title,

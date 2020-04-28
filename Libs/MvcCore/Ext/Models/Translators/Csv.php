@@ -89,8 +89,8 @@ class Csv extends \MvcCore\Model implements \MvcCore\Ext\Models\ITranslator
 	public function __construct ($localization) {
 		$this->localization = $localization;
 		if (self::$writeTranslations === NULL) {
-			$configClass = \MvcCore\Application::GetInstance()->GetConfigClass();
-			self::$writeTranslations = $configClass::IsDevelopment();
+			$environment = \MvcCore\Application::GetInstance()->GetEnvironment();
+			self::$writeTranslations = $environment->IsDevelopment();
 		}
 	}
 
@@ -241,7 +241,7 @@ class Csv extends \MvcCore\Model implements \MvcCore\Ext\Models\ITranslator
 								$rawContent = trim(file_get_contents($csvFullPath), "\r\n");
 							foreach ($translationKeys as $translationKey)
 								$rawContent .= PHP_EOL . $translationKey . ';+' . $translationKey;
-							$toolsClass::SingleProcessWrite(
+							$toolsClass::AtomicWrite(
 								$csvFullPath,  $rawContent
 							);
 						}
