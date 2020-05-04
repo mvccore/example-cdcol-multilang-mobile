@@ -6,7 +6,7 @@ class System extends Base {
 
 	public function JsErrorsLogAction () {
 		$this->SetViewEnabled(FALSE);
-		if (\MvcCore\Config::IsProduction()) return;
+		if ($this->environment->IsProduction()) return;
 		$keys = [
 			'message'	=> 1,
 			'uri'		=> 1,
