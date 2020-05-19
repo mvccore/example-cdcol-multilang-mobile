@@ -104,7 +104,7 @@ class CdCollection extends Base {
 			$detailForm->SetErrorUrl($this->Url(':Edit', ['id' => $this->album->Id, 'absolute' => TRUE]));
 		}
 		$detailForm->Submit();
-		if ($detailForm->GetResult()) 
+		if ($detailForm->GetResult())
 			$this->album->SetUp(
 				$detailForm->GetValues(), \MvcCore\IModel::KEYS_CONVERSION_UNDERSCORES_TO_PASCALCASE
 			)->Save();
@@ -118,7 +118,9 @@ class CdCollection extends Base {
 	 * @return void
 	 */
 	public function DeleteAction () {
-		if ($this->getVirtualDeleteForm()->SubmitCsrfTokens($_POST)) 
+		$form = $this->getVirtualDeleteForm();
+		$form->SubmitCsrfTokens($_POST);
+		if ($form->GetResult())
 			$this->album->Delete();
 		self::Redirect($this->Url(':Index'));
 	}
