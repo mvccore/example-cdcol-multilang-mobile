@@ -116,7 +116,7 @@ class Bootstrap {
 					'ru'			=> '/редактировать[/<id>]',
 					'cs'			=> '/upravit[/<id>]'
 				],
-				'defaults'			=> ['id' => 1,],
+				'defaults'			=> ['id' => 0,],
 				'constraints'		=> ['id' => '\d+'],
 			]
 		]);

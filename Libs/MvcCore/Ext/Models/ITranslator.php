@@ -10,9 +10,9 @@ interface ITranslator
 	 *								(international language code in lower case 
 	 *								plus dash and plus international locale code 
 	 *								in upper case).
-	 * @return \MvcCore\Model|\MvcCore\IModel|\MvcCore\Ext\Models\ITranslator
+	 * @return \MvcCore\Ext\Models\ITranslator
 	 */
-	public static function GetInstance ();
+	public static function GetInstance ($localization);
 
 	/**
 	 * Set translator localization (for example as `en` or `en-US` ...).

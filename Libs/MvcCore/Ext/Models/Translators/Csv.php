@@ -2,8 +2,14 @@
 
 namespace MvcCore\Ext\Models\Translators;
 
-class Csv extends \MvcCore\Model implements \MvcCore\Ext\Models\ITranslator
-{
+class Csv extends \MvcCore\Model implements \MvcCore\Ext\Models\ITranslator {
+
+	/**
+	 * Singleton instance.
+	 * @var \MvcCore\Ext\Models\Translators\Csv
+	 */
+	protected static $instance = NULL;
+
 	/**
 	 * Relative path to directory with CSV translations, relative to
 	 * application root directory. Default value is `/Var/Translations`.
@@ -51,10 +57,12 @@ class Csv extends \MvcCore\Model implements \MvcCore\Ext\Models\ITranslator
 	 *								(international language code in lower case
 	 *								plus dash and plus international locale code
 	 *								in upper case).
-	 * @return \MvcCore\Model|\MvcCore\IModel|\MvcCore\Ext\Models\Translators\Csv
+	 * @return \MvcCore\Ext\Models\Translators\Csv
 	 */
-	public static function GetInstance () {
-		return call_user_func_array('parent::GetInstance', func_get_args());
+	public static function GetInstance ($localization) {
+		if (self::$instance === NULL)
+			self::$instance = new static($localization);
+		return self::$instance;
 	}
 
 	/**
