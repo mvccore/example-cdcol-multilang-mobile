@@ -1,7 +1,7 @@
 # MvcCore - Example - CD Collection - With Authentication, Multilanguage Routes And Mobile Version
 
 [![Latest Stable Version](https://img.shields.io/badge/Stable-v5.0.0-brightgreen.svg?style=plastic)](https://github.com/mvccore/example-cdcol-multilang-mobile/releases)
-[![License](https://img.shields.io/badge/Licence-BSD-brightgreen.svg?style=plastic)](https://github.com/mvccore/example-cdcol-multilang-mobile/blob/master/LICENCE.md)
+[![License](https://img.shields.io/badge/License-BSD%203-brightgreen.svg?style=plastic)](https://mvccore.github.io/docs/mvccore/5.0.0/LICENCE.md)
 [![Packager Build](https://img.shields.io/badge/Packager%20Build-passing-brightgreen.svg?style=plastic)](https://github.com/mvccore/packager)
 ![PHP Version](https://img.shields.io/badge/PHP->=5.4-brightgreen.svg?style=plastic)
 
@@ -14,12 +14,5 @@ run this example first (to see how it works) and then follow steps here on [`mvc
 
 ## Instalation
 ```shell
-# load example
 composer create-project mvccore/example-cdcol-multilang-mobile
-
-# go to project development dir
-cd example-cdcol-multilang-mobile/development
-
-# update dependencies for app development sources
-composer update
 ```
