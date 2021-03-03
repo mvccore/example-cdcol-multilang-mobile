@@ -147,7 +147,7 @@ class CdCollection extends Base {
 			->SetTranslator(function ($key) {
 				return $this->translator->Translate($key);
 			})
-			->SetDefaultFieldsRenderMode(
+			->SetFieldsRenderModeDefault(
 				Form::FIELD_RENDER_MODE_LABEL_AROUND
 			);
 		if ($editForm) {
