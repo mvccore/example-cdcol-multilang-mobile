@@ -1,9 +1,9 @@
 <?php
-	/** @var $this \MvcCore\View */
+	/** @var \MvcCore\View $this */
 
-	/** @var $router \MvcCore\Ext\Routers\ILocalization */
+	/** @var \MvcCore\Ext\Routers\ILocalization $router */
 	$router = $controller->GetRouter();
-	/** @var $request \MvcCore\Request */
+	/** @var \MvcCore\Request $request */
 	$request = $controller->GetRequest();
 	
 	$allowedLocalizations = $router->GetAllowedLocalizations();

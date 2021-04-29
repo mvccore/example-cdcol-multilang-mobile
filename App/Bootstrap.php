@@ -56,7 +56,7 @@ class Bootstrap {
 		$app->SetRouterClass('MvcCore\Ext\Routers\MediaAndLocalization');
 
 		// Set up router localizations and media site versions:
-		/** @var $router \MvcCore\Ext\Routers\MediaAndLocalization */
+		/** @var \MvcCore\Ext\Routers\MediaAndLocalization $router */
 		$router = \MvcCore\Router::GetInstance();
 		$router
 			->SetAllowedMediaVersionsAndUrlValues([

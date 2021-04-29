@@ -60,7 +60,7 @@ class CdCollection extends Base {
 	public function IndexAction () {
 		$this->view->title = $this->translate('CD Collection');
 		$this->view->albums = Models\Album::GetAll();
-		/** @var $abstractForm \MvcCore\Ext\Form */
+		/** @var \MvcCore\Ext\Form $abstractForm */
 		list($this->view->csrfName, $this->view->csrfValue)
 			= $this->getVirtualDeleteForm()->SetUpCsrf();
 		$this->view->Js('varFoot')
