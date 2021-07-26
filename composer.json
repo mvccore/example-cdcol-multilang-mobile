@@ -24,7 +24,7 @@
 	}],
 	"require": {
 		"php": ">=5.4.0",
-		"mvccore/mvccore": "^5.0",
+		"mvccore/mvccore": "^5.1",
 		"mvccore/ext-router-media-localization": "^5.0",
 		"mvccore/ext-form": "^5.0",
 		"mvccore/ext-form-field-text": "^5.0",
