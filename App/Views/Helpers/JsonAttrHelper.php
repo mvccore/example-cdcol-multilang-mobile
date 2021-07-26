@@ -10,6 +10,6 @@ class JsonAttrHelper {
 	 * @return string
 	 */
 	public function JsonAttr ($object = NULL) {
-		return rawurlencode(\MvcCore\Tool::EncodeJson($object));
+		return rawurlencode(\MvcCore\Tool::JsonEncode($object));
 	}
 }
