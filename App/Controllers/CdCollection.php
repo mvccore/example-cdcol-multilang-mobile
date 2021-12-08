@@ -44,9 +44,11 @@ class CdCollection extends Base {
 		// if there is any 'id' param in `$_GET` or `$_POST`,
 		// try to load album model instance from database
 		$id = $this->GetParam("id", "0-9", NULL, 'int');
-		$this->album = Models\Album::GetById(intval($id));
-		if (!$this->album && $this->actionName == 'edit')
-			$this->RenderNotFound();
+		if (is_int($id)) {
+			$this->album = Models\Album::GetById($id);
+			if (!$this->album && $this->actionName == 'edit')
+				$this->RenderNotFound();
+		}
 	}
 
 	/**
@@ -73,7 +75,9 @@ class CdCollection extends Base {
 	 */
 	public function CreateAction () {
 		$this->view->title = $this->translate('New album');
-		$this->view->detailForm = $this->getCreateEditForm(FALSE);
+		$form = $this->getCreateEditForm(FALSE);
+		if (!$form->GetErrors()) $form->ClearSession();
+		$this->view->detailForm = $form;
 	}
 
 	/**
