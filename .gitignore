@@ -54,6 +54,7 @@ Temporary Items
 # Application third party modules contents
 *.lock
 *.phpproj
+.vs
 *.phpproj.user
 vendor/*
 Var/Tmp/*
@@ -61,3 +62,4 @@ Var/Logs/*
 composer-update-dev.cmd
 composer-update.cmd
 composer.dev.json
+composer.dev.lock
