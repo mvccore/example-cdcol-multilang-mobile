@@ -28,3 +28,5 @@ Language: en-US;английский
 Language: ru-RU;русский
 mobile;мобильный
 full;полный
+No albums in database. To create, click to 'New Album' button.;Нет альбомов в базе. Чтобы создать, нажмите кнопку «Новый альбом».
+Found {count} results.;{count, plural, zero {Альбомы не найдены.} one {1 альбом найден.} few {Naydeno # al'boma.} other {Naydeno # al'bomov.}}

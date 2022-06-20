@@ -10,5 +10,6 @@
 <?php if (!$albums): ?>
 	<p><?=$translate("No albums in database. To create, click to 'New Album' button.")?></p>
 <?php else: ?>
+	<p><?=$translate("Found {count} results.", ['count' => count($albums)])?></p>
 	<?=$this->RenderScript('./index.table.' . $currentMediaSiteVersion)?>
 <?php endif; ?>

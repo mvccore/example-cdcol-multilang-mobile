@@ -19,6 +19,16 @@ class Bootstrap {
 		}
 
 
+		$cache = \MvcCore\Ext\Caches\Redis::GetInstance([ // `default` connection to:
+			\MvcCore\Ext\ICache::CONNECTION_DATABASE => 'cdcol_multilang_mobile'
+		]);
+		\MvcCore\Ext\Cache::RegisterStore(
+			\MvcCore\Ext\Caches\Redis::class, $cache, TRUE
+		);
+		//if (!$env->IsDevelopment())
+			$cache->Connect();
+
+
 		/**
 		 * Uncomment this line before generate any assets into temporary directory, before application
 		 * packing/building, only if you want to pack application without JS/CSS/fonts/images inside
@@ -54,6 +64,7 @@ class Bootstrap {
 
 		// Patch core to use extended router class:
 		$app->SetRouterClass('MvcCore\Ext\Routers\MediaAndLocalization');
+
 
 		// Set up router localizations and media site versions:
 		/** @var \MvcCore\Ext\Routers\MediaAndLocalization $router */

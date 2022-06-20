@@ -28,3 +28,5 @@ Language: cs-CZ;Checo
 Language: en-US;Inglés
 mobile;móviles
 full;de computadora
+No albums in database. To create, click to 'New Album' button.;No hay álbumes en la base de datos. Para crear, haga clic en el botón 'Nuevo álbum'.
+Found {count} results.;{count, plural, zero {No se han encontrado resultados.} one {1 álbum encontrado.} other {# álbumes encontrados.}}

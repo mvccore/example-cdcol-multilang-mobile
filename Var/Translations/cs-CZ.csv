@@ -28,3 +28,5 @@ Language: cs-CZ;Česky
 Language: en-US;Anglicky
 mobile;mobil
 full;počítač
+No albums in database. To create, click to 'New Album' button.;Žádná alba v databázi. Pro vytvoření, klikněte na tlačítko 'Nové album'.
+Found {count} results.;{count, plural, zero {Nenalezeno žádné album.} one {Nalezeno 1 album.} few {Nalezena # alba.} other {Nalezeno # alb.}}

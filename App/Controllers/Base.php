@@ -18,7 +18,7 @@ class Base extends \MvcCore\Controller {
 
 	/**
 	 * Translator instance.
-	 * @var \MvcCore\Ext\Models\Translators\ITranslator
+	 * @var \MvcCore\Ext\Translators\Csv
 	 */
 	protected $translator = NULL;
 
@@ -33,9 +33,9 @@ class Base extends \MvcCore\Controller {
 			));
 		});
 		// create translator instance
-		$this->translator = \MvcCore\Ext\Models\Translators\Csv::GetInstance(
+		$this->translator = \MvcCore\Ext\Translators\Csv::GetInstance(
 			$this->router->GetLocalization(TRUE)
-		);
+		)->SetCache(\MvcCore\Ext\Cache::GetStore());
 	}
 
 	public function PreDispatch () {

@@ -32,6 +32,8 @@
 		"mvccore/ext-form-field-button": "^5.0",
 		"mvccore/ext-view-helper-assets": "^5.0",
 		"mvccore/ext-auth-basic": "^5.0",
+		"mvccore/ext-translator-csv": "^5.0",
+		"mvccore/ext-cache-redis": "^5.0",
 		"mvccore/ext-debug-tracy-all": "^5.0"
 	},
 	"minimum-stability": "stable"

@@ -28,3 +28,5 @@ Language: en-US;Englisch
 Language: de-DE;Deutsch
 mobile;mobile
 full;computer
+No albums in database. To create, click to 'New Album' button.;Keine alben in der datenbank. Klicken Sie zum Erstellen auf die Schaltfläche 'Neues Album'.
+Found {count} results.;{count, plural, zero {Keine Alben gefunden.} one {1 Album gefunden.} few {# Alben gefunden.} other {# Alben gefunden.}}
