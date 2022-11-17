@@ -24,17 +24,18 @@
 	}],
 	"require": {
 		"php": ">=5.4.0",
-		"mvccore/mvccore": "^5.1",
+		"mvccore/mvccore": "^5.2",
 		"mvccore/ext-router-media-localization": "^5.0",
 		"mvccore/ext-form": "^5.0",
 		"mvccore/ext-form-field-text": "^5.0",
 		"mvccore/ext-form-field-numeric": "^5.0",
 		"mvccore/ext-form-field-button": "^5.0",
 		"mvccore/ext-view-helper-assets": "^5.0",
-		"mvccore/ext-auth-basic": "^5.0",
-		"mvccore/ext-translator-csv": "^5.0",
+		"mvccore/ext-auth-basic": "^5.2",
+		"mvccore/ext-translator-csv": "^5.2",
 		"mvccore/ext-cache-redis": "^5.0",
-		"mvccore/ext-debug-tracy-all": "^5.0"
+		"mvccore/ext-debug-tracy-all": "^5.0",
+		"mvccore/ext-config-yaml": "^5.2"
 	},
 	"minimum-stability": "stable"
 }
