@@ -19,6 +19,9 @@ class Bootstrap {
 		}
 
 
+		// $app->SetConfigClass('MvcCore\Ext\Configs\Yaml');
+
+
 		$cache = \MvcCore\Ext\Caches\Redis::GetInstance([ // `default` connection to:
 			\MvcCore\Ext\ICache::CONNECTION_DATABASE => 'cdcol_multilang_mobile'
 		]);

@@ -1,0 +1,40 @@
+environments:
+  dev: "127.0.0.1"
+
+
+# Example db connections blocks:
+db:
+  defaultName: "lite"
+
+  lite: 
+    driver: "sqlite"
+    database: "/.databases/sqlite-cdcol.db"
+
+#  my: 
+#    driver: "mysql"
+#    host: "127.0.0.1"
+#    user: "root"
+#    password: "1234"
+#    database: "cdcol"
+#
+#  ms: 
+#    driver: "sqlsrv"
+#    host: ".\SQLEXPRESS"
+#    user: "sa"
+#    password: "1234"
+#    database: "cdcol"
+#
+#  pg: 
+#    driver: "pgsql"
+#    host: "127.0.0.1"
+#    user: "postgres"
+#    password: "1234"
+#    database: "cdcol"
+
+
+## Example system config file authentication credentials block:
+#users:
+#  0: 
+#    userName: "admin"
+#    fullName: "Administrator"
+#    passwordHash: "$2y$10$s9E56/QH6.a69sJML9aS6enCczRCZcEPrbFh7BYTSrnrn4H9QMF6u"
