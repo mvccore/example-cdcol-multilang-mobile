@@ -6,7 +6,11 @@ class System extends Base {
 
 	public function JsErrorsLogAction () {
 		$this->SetViewEnabled(FALSE);
-		if ($this->environment->IsProduction()) return;
+		$sysCfg = $this->GetConfigSystem();
+		$jsErrorsLog = isset($sysCfg->debug->jsErrorsLog)
+			? (bool) $sysCfg->debug->jsErrorsLog
+			: FALSE;
+		if (!$jsErrorsLog) return;
 		$keys = [
 			'message'	=> 1,
 			'uri'		=> 1,
@@ -21,10 +25,9 @@ class System extends Base {
 		foreach ($keys as $key => $hex) {
 			$param = $this->GetParam($key);
 			if ($hex) $param = self::_hexToStr($param);
-			$param = preg_replace("#[^a-zA-Z0-9/\&\(\)\[\]\.\'\"%\#\$]#", "", $param);
 			$data[$key] = $param;
 		}
-		$msg = json_encode($data);
+		$msg = \MvcCore\Tool::JsonEncode($data, JSON_PRETTY_PRINT);
 		\MvcCore\Debug::Log($msg, \MvcCore\Debug::JAVASCRIPT);
 	}
 

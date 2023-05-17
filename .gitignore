@@ -59,7 +59,6 @@ Temporary Items
 vendor/*
 Var/Tmp/*
 Var/Logs/*
-composer-update-dev.cmd
-composer-update.cmd
-composer.dev.json
-composer.dev.lock
+composer-update-dev.*
+composer-update.*
+composer.dev.*

@@ -8,7 +8,7 @@ Options -Indexes
 	
 	# forbid the direct access to app directories (eg. config-files, ...)
 	RewriteRule ^(\.databases|App|Libs|vendor|Var/Logs)/.*$ / [F,L]
-	RewriteRule ^(composer\.json|\.gitignore|README\.md|LICENCE\.md|web\.config)$ / [F,L]
+	RewriteRule ^(composer|\.gitignore|\.hgignore|README\.md|LICENSE\.md|web\.config)$ / [F,L]
 	
 	# basic zend-framework setup see: http://framework.zend.com/manual/en/zend.controller.html
 	RewriteCond %{REQUEST_FILENAME} -s [OR]

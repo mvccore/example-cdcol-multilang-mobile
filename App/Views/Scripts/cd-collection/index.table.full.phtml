@@ -12,9 +12,9 @@
 		<?php foreach ($albums as $id => $album): ?>
 			<tr>
 				<td class="right"><?=$album->Id?></td>
-				<td><a href="<?=$url(':Edit', ['id'	=> $album->Id])?>"><?=$album->Title?></a></td>
-				<td><?=$album->Interpret?></td>
-				<td class="right"><?=$album->Year?></td>
+				<td><a href="<?=$url(':Edit', ['id'	=> $album->Id])?>"><?=$escape($album->Title)?></a></td>
+				<td><?=$escape($album->Interpret)?></td>
+				<td class="right"><?=$escape($album->Year)?></td>
 				<td class="center">
 					<form class="delete" action="<?=$url(':Delete', ['absolute' => TRUE])?>" method="post">
 						<input type="hidden" name="<?=$this->csrfName?>" value="<?=$this->csrfValue?>" />
