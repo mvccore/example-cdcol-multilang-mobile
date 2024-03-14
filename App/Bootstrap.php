@@ -19,7 +19,7 @@ class Bootstrap {
 		}
 
 
-		// $app->SetConfigClass('MvcCore\Ext\Configs\Yaml');
+		//$app->SetConfigClass('MvcCore\Ext\Configs\Yaml');
 
 
 		$cache = \MvcCore\Ext\Caches\Redis::GetInstance([ // `default` connection to:

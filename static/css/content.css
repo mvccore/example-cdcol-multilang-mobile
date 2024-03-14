@@ -9,7 +9,7 @@ form.signout button[type=submit]:focus,
 form.signout button[type=submit]:active{border-bottom:0 !important;}
 
 form.signout button[type=submit],
-form.delete input[type=submit]{background:transparent;border:0;padding:0;}
+form.delete input[type=submit]{background:transparent;border:0;padding:0;line-height:1.25em !important;height:auto !important;}
 a,
 form.signout button[type=submit],
 form.delete input[type=submit]{color:#3d497f;border-bottom:1px solid #3d497f;font-family:'MyriadRegular';text-decoration:none;cursor:pointer;}
@@ -21,7 +21,7 @@ form.signout button[type=submit]:focus,
 form.signout button[type=submit]:active,
 form.delete input[type=submit]:hover,
 form.delete input[type=submit]:focus,
-form.delete input[type=submit]:active{color:#263b97;border-bottom:1px solid transparent;}
+form.delete input[type=submit]:active{color:#263b97;border-bottom:1px solid transparent;background:transparent;}
 a:visited{color:#633d7f;border-bottom:1px solid #633d7f;}
 a:visited:hover,a:visited:focus,a:visited:active{color:#263b97;border-bottom:1px solid transparent;}
 
