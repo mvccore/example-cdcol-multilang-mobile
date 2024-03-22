@@ -124,11 +124,11 @@ class Bootstrap {
 			],
 			'CdCollection:Edit'		=> [
 				'pattern'			=> [
-					'en'			=> '/edit[/<id>]',
-					'de'			=> '/bearbeiten[/<id>]',
-					'es'			=> '/editar[/<id>]',
-					'ru'			=> '/редактировать[/<id>]',
-					'cs'			=> '/upravit[/<id>]'
+					'en'			=> '/edit/<id>',
+					'de'			=> '/bearbeiten/<id>',
+					'es'			=> '/editar/<id>',
+					'ru'			=> '/редактировать/<id>',
+					'cs'			=> '/upravit/<id>'
 				],
 				'defaults'			=> ['id' => 0,],
 				'constraints'		=> ['id' => '\d+'],
