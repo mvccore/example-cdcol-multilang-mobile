@@ -33,8 +33,9 @@ class Base extends \MvcCore\Controller {
 			));
 		});
 		// create translator instance
+		$localization = implode('_', $this->router->GetLocalization(FALSE));
 		$this->translator = \MvcCore\Ext\Translators\Csv::GetInstance(
-			$this->router->GetLocalization(TRUE)
+			$localization
 		)->SetCache(\MvcCore\Ext\Cache::GetStore());
 	}
 
