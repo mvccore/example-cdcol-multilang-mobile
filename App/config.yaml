@@ -1,6 +1,12 @@
 environments:
   dev: "127.0.0.1"
 
+assets:
+  tmpDir: "~/Var/Tmp"
+  cssMinify: 1
+  cssJoin: 1
+  jsMinify: 1
+  jsJoin: 1
 
 # Example db connections blocks:
 db:
