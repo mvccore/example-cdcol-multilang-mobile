@@ -25,7 +25,7 @@ class Base extends \MvcCore\Controller {
 	public function Init() {
 		parent::Init();
 		// when any CSRF token is outdated or not the same - sign out user by default
-		\MvcCore\Ext\Form::AddCsrfErrorHandler(function (\MvcCore\Ext\Form $form, $errorMsg) {
+		$this->application->AddSecurityErrorHandler(function ($req, $res, \MvcCore\Ext\Form $form) {
 			\MvcCore\Ext\Auths\Basics\User::LogOut();
 			self::Redirect($this->Url(
 				'Index:Index',
