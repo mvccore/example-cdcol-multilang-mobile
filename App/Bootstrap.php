@@ -13,10 +13,8 @@ class Bootstrap {
 
 
 		// Patch core to use extended debug class:
-		if (class_exists('MvcCore\Ext\Debugs\Tracy')) {
-			\MvcCore\Ext\Debugs\Tracy::$Editor = 'MSVS2019';
+		if (class_exists('MvcCore\Ext\Debugs\Tracy'))
 			$app->SetDebugClass('MvcCore\Ext\Debugs\Tracy');
-		}
 
 
 		//$app->SetConfigClass('MvcCore\Ext\Configs\Yaml');
