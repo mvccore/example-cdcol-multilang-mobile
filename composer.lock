@@ -8,32 +8,34 @@
     "packages": [
         {
             "name": "mobiledetect/mobiledetectlib",
-            "version": "2.8.45",
+            "version": "4.8.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/serbanghita/Mobile-Detect.git",
-                "reference": "96aaebcf4f50d3d2692ab81d2c5132e425bca266"
+                "reference": "96b1e1fa9a968de7660a031106ab529f659d0192"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/serbanghita/Mobile-Detect/zipball/96aaebcf4f50d3d2692ab81d2c5132e425bca266",
-                "reference": "96aaebcf4f50d3d2692ab81d2c5132e425bca266",
+                "url": "https://api.github.com/repos/serbanghita/Mobile-Detect/zipball/96b1e1fa9a968de7660a031106ab529f659d0192",
+                "reference": "96b1e1fa9a968de7660a031106ab529f659d0192",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.0.0"
+                "php": ">=8.0",
+                "psr/simple-cache": "^3"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.8.36"
+                "friendsofphp/php-cs-fixer": "^v3.75.0",
+                "phpbench/phpbench": "^1.2",
+                "phpstan/phpstan": "^2.1.11",
+                "phpunit/phpunit": "^9.6.22",
+                "squizlabs/php_codesniffer": "^3.12.1"
             },
             "type": "library",
             "autoload": {
-                "psr-0": {
-                    "Detection": "namespaced/"
-                },
-                "classmap": [
-                    "Mobile_Detect.php"
-                ]
+                "psr-4": {
+                    "Detection\\": "src/"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -58,7 +60,7 @@
             ],
             "support": {
                 "issues": "https://github.com/serbanghita/Mobile-Detect/issues",
-                "source": "https://github.com/serbanghita/Mobile-Detect/tree/2.8.45"
+                "source": "https://github.com/serbanghita/Mobile-Detect/tree/4.8.10"
             },
             "funding": [
                 {
@@ -66,20 +68,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-11-07T21:57:25+00:00"
+            "time": "2026-01-09T16:21:59+00:00"
         },
         {
             "name": "mvccore/ext-auth-basic",
-            "version": "v5.3.0",
+            "version": "v5.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mvccore/ext-auth-basic.git",
-                "reference": "33aec250320fbcc294e1802cdd8ede7eb05140cc"
+                "reference": "30dbcae0ab00eabaa1c73724b4094c668788c2fd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mvccore/ext-auth-basic/zipball/33aec250320fbcc294e1802cdd8ede7eb05140cc",
-                "reference": "33aec250320fbcc294e1802cdd8ede7eb05140cc",
+                "url": "https://api.github.com/repos/mvccore/ext-auth-basic/zipball/30dbcae0ab00eabaa1c73724b4094c668788c2fd",
+                "reference": "30dbcae0ab00eabaa1c73724b4094c668788c2fd",
                 "shasum": ""
             },
             "require": {
@@ -130,22 +132,22 @@
             ],
             "support": {
                 "issues": "https://github.com/mvccore/ext-auth-basic/issues",
-                "source": "https://github.com/mvccore/ext-auth-basic/tree/v5.3.0"
+                "source": "https://github.com/mvccore/ext-auth-basic/tree/v5.3.1"
             },
-            "time": "2024-11-21T15:00:56+00:00"
+            "time": "2025-08-29T08:33:31+00:00"
         },
         {
             "name": "mvccore/ext-cache",
-            "version": "v5.3.0",
+            "version": "v5.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mvccore/ext-cache.git",
-                "reference": "b8fd81219976879e7d82bb3ebeb95d6bebdfced0"
+                "reference": "9c3017e967a51dab23410808e0eb1f003c38fe38"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mvccore/ext-cache/zipball/b8fd81219976879e7d82bb3ebeb95d6bebdfced0",
-                "reference": "b8fd81219976879e7d82bb3ebeb95d6bebdfced0",
+                "url": "https://api.github.com/repos/mvccore/ext-cache/zipball/9c3017e967a51dab23410808e0eb1f003c38fe38",
+                "reference": "9c3017e967a51dab23410808e0eb1f003c38fe38",
                 "shasum": ""
             },
             "require": {
@@ -183,9 +185,9 @@
             ],
             "support": {
                 "issues": "https://github.com/mvccore/ext-cache/issues",
-                "source": "https://github.com/mvccore/ext-cache/tree/v5.3.0"
+                "source": "https://github.com/mvccore/ext-cache/tree/v5.3.3"
             },
-            "time": "2024-11-21T15:00:56+00:00"
+            "time": "2026-04-01T14:07:49+00:00"
         },
         {
             "name": "mvccore/ext-cache-redis",
@@ -301,22 +303,22 @@
         },
         {
             "name": "mvccore/ext-debug-tracy",
-            "version": "v5.3.0",
+            "version": "v5.3.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mvccore/ext-debug-tracy.git",
-                "reference": "c17f1fc0b665213ea648e9f6830155d5aa9283ec"
+                "reference": "50a6c238ae0038f4f641461b68188d11c4a2309c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mvccore/ext-debug-tracy/zipball/c17f1fc0b665213ea648e9f6830155d5aa9283ec",
-                "reference": "c17f1fc0b665213ea648e9f6830155d5aa9283ec",
+                "url": "https://api.github.com/repos/mvccore/ext-debug-tracy/zipball/50a6c238ae0038f4f641461b68188d11c4a2309c",
+                "reference": "50a6c238ae0038f4f641461b68188d11c4a2309c",
                 "shasum": ""
             },
             "require": {
                 "mvccore/mvccore": "^5.3",
                 "php": ">=5.4.0",
-                "tomflidr/tracy": "^2.7.4"
+                "tracy/tracy": ">=2.5"
             },
             "type": "library",
             "autoload": {
@@ -351,22 +353,22 @@
             ],
             "support": {
                 "issues": "https://github.com/mvccore/ext-debug-tracy/issues",
-                "source": "https://github.com/mvccore/ext-debug-tracy/tree/v5.3.0"
+                "source": "https://github.com/mvccore/ext-debug-tracy/tree/v5.3.8"
             },
-            "time": "2024-11-21T15:00:58+00:00"
+            "time": "2026-04-01T14:18:01+00:00"
         },
         {
             "name": "mvccore/ext-debug-tracy-db",
-            "version": "v5.3.0",
+            "version": "v5.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mvccore/ext-debug-tracy-db.git",
-                "reference": "b20dcaa738bbf61df3ecdb3040cc32892dcec004"
+                "reference": "47b2728b40c9ec07ece2cd491de3aa5d4fe2e5ac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mvccore/ext-debug-tracy-db/zipball/b20dcaa738bbf61df3ecdb3040cc32892dcec004",
-                "reference": "b20dcaa738bbf61df3ecdb3040cc32892dcec004",
+                "url": "https://api.github.com/repos/mvccore/ext-debug-tracy-db/zipball/47b2728b40c9ec07ece2cd491de3aa5d4fe2e5ac",
+                "reference": "47b2728b40c9ec07ece2cd491de3aa5d4fe2e5ac",
                 "shasum": ""
             },
             "require": {
@@ -409,22 +411,22 @@
             ],
             "support": {
                 "issues": "https://github.com/mvccore/ext-debug-tracy-db/issues",
-                "source": "https://github.com/mvccore/ext-debug-tracy-db/tree/v5.3.0"
+                "source": "https://github.com/mvccore/ext-debug-tracy-db/tree/v5.3.5"
             },
-            "time": "2024-11-21T15:00:58+00:00"
+            "time": "2026-04-01T13:48:16+00:00"
         },
         {
             "name": "mvccore/ext-debug-tracy-mvccore",
-            "version": "v5.3.0",
+            "version": "v5.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mvccore/ext-debug-tracy-mvccore.git",
-                "reference": "6ef7cefb76fc0a6673bf55e5e455424c9c061ccf"
+                "reference": "a755246d381ae911c768ad5483650bb0b02b2e5f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mvccore/ext-debug-tracy-mvccore/zipball/6ef7cefb76fc0a6673bf55e5e455424c9c061ccf",
-                "reference": "6ef7cefb76fc0a6673bf55e5e455424c9c061ccf",
+                "url": "https://api.github.com/repos/mvccore/ext-debug-tracy-mvccore/zipball/a755246d381ae911c768ad5483650bb0b02b2e5f",
+                "reference": "a755246d381ae911c768ad5483650bb0b02b2e5f",
                 "shasum": ""
             },
             "require": {
@@ -472,22 +474,22 @@
             ],
             "support": {
                 "issues": "https://github.com/mvccore/ext-debug-tracy-mvccore/issues",
-                "source": "https://github.com/mvccore/ext-debug-tracy-mvccore/tree/v5.3.0"
+                "source": "https://github.com/mvccore/ext-debug-tracy-mvccore/tree/v5.3.3"
             },
-            "time": "2024-11-21T15:00:58+00:00"
+            "time": "2026-04-01T13:48:35+00:00"
         },
         {
             "name": "mvccore/ext-debug-tracy-routing",
-            "version": "v5.3.0",
+            "version": "v5.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mvccore/ext-debug-tracy-routing.git",
-                "reference": "8bda673c4a12326604f453067a5ea3ec95fcdf4e"
+                "reference": "8a42f889c5fd4ac988278e2c9718268445c63c5b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mvccore/ext-debug-tracy-routing/zipball/8bda673c4a12326604f453067a5ea3ec95fcdf4e",
-                "reference": "8bda673c4a12326604f453067a5ea3ec95fcdf4e",
+                "url": "https://api.github.com/repos/mvccore/ext-debug-tracy-routing/zipball/8a42f889c5fd4ac988278e2c9718268445c63c5b",
+                "reference": "8a42f889c5fd4ac988278e2c9718268445c63c5b",
                 "shasum": ""
             },
             "require": {
@@ -532,22 +534,22 @@
             ],
             "support": {
                 "issues": "https://github.com/mvccore/ext-debug-tracy-routing/issues",
-                "source": "https://github.com/mvccore/ext-debug-tracy-routing/tree/v5.3.0"
+                "source": "https://github.com/mvccore/ext-debug-tracy-routing/tree/v5.3.3"
             },
-            "time": "2024-11-21T15:00:59+00:00"
+            "time": "2026-04-01T13:49:14+00:00"
         },
         {
             "name": "mvccore/ext-debug-tracy-session",
-            "version": "v5.3.0",
+            "version": "v5.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mvccore/ext-debug-tracy-session.git",
-                "reference": "f2e5cfa494006a28d03aa0bbe2b7206c0550abcf"
+                "reference": "ca2253df93f28b29db9176f88b62de322d647668"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mvccore/ext-debug-tracy-session/zipball/f2e5cfa494006a28d03aa0bbe2b7206c0550abcf",
-                "reference": "f2e5cfa494006a28d03aa0bbe2b7206c0550abcf",
+                "url": "https://api.github.com/repos/mvccore/ext-debug-tracy-session/zipball/ca2253df93f28b29db9176f88b62de322d647668",
+                "reference": "ca2253df93f28b29db9176f88b62de322d647668",
                 "shasum": ""
             },
             "require": {
@@ -589,22 +591,22 @@
             ],
             "support": {
                 "issues": "https://github.com/mvccore/ext-debug-tracy-session/issues",
-                "source": "https://github.com/mvccore/ext-debug-tracy-session/tree/v5.3.0"
+                "source": "https://github.com/mvccore/ext-debug-tracy-session/tree/v5.3.3"
             },
-            "time": "2024-11-21T15:00:59+00:00"
+            "time": "2026-04-01T13:49:30+00:00"
         },
         {
             "name": "mvccore/ext-form",
-            "version": "v5.3.0",
+            "version": "v5.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mvccore/ext-form.git",
-                "reference": "42d09b5781e25249f61acddb4f7eee167d34d398"
+                "reference": "275410b9bacc71698aa62b439a9c7d5c46377223"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mvccore/ext-form/zipball/42d09b5781e25249f61acddb4f7eee167d34d398",
-                "reference": "42d09b5781e25249f61acddb4f7eee167d34d398",
+                "url": "https://api.github.com/repos/mvccore/ext-form/zipball/275410b9bacc71698aa62b439a9c7d5c46377223",
+                "reference": "275410b9bacc71698aa62b439a9c7d5c46377223",
                 "shasum": ""
             },
             "require": {
@@ -679,9 +681,9 @@
             ],
             "support": {
                 "issues": "https://github.com/mvccore/ext-form/issues",
-                "source": "https://github.com/mvccore/ext-form/tree/v5.3.0"
+                "source": "https://github.com/mvccore/ext-form/tree/v5.3.5"
             },
-            "time": "2024-11-21T15:44:23+00:00"
+            "time": "2026-04-01T13:38:58+00:00"
         },
         {
             "name": "mvccore/ext-form-field-button",
@@ -889,16 +891,16 @@
         },
         {
             "name": "mvccore/ext-model-db",
-            "version": "v5.3.0",
+            "version": "v5.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mvccore/ext-model-db.git",
-                "reference": "cb034dc78295b263195f930ac034170d77da1b82"
+                "reference": "b9368f99014597d1f2ab085a5cc25f16c5c8ebdf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mvccore/ext-model-db/zipball/cb034dc78295b263195f930ac034170d77da1b82",
-                "reference": "cb034dc78295b263195f930ac034170d77da1b82",
+                "url": "https://api.github.com/repos/mvccore/ext-model-db/zipball/b9368f99014597d1f2ab085a5cc25f16c5c8ebdf",
+                "reference": "b9368f99014597d1f2ab085a5cc25f16c5c8ebdf",
                 "shasum": ""
             },
             "require": {
@@ -945,9 +947,9 @@
             ],
             "support": {
                 "issues": "https://github.com/mvccore/ext-model-db/issues",
-                "source": "https://github.com/mvccore/ext-model-db/tree/v5.3.0"
+                "source": "https://github.com/mvccore/ext-model-db/tree/v5.3.5"
             },
-            "time": "2024-11-21T15:00:57+00:00"
+            "time": "2026-04-01T13:56:24+00:00"
         },
         {
             "name": "mvccore/ext-model-db-sqlite",
@@ -1061,16 +1063,16 @@
         },
         {
             "name": "mvccore/ext-router-localization",
-            "version": "v5.3.0",
+            "version": "v5.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mvccore/ext-router-localization.git",
-                "reference": "b0b10c8ea84bfbec9e4feaafe62ff0ad13cb6cf9"
+                "reference": "851b94e33c440493092cae40937f382f92ddb7be"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mvccore/ext-router-localization/zipball/b0b10c8ea84bfbec9e4feaafe62ff0ad13cb6cf9",
-                "reference": "b0b10c8ea84bfbec9e4feaafe62ff0ad13cb6cf9",
+                "url": "https://api.github.com/repos/mvccore/ext-router-localization/zipball/851b94e33c440493092cae40937f382f92ddb7be",
+                "reference": "851b94e33c440493092cae40937f382f92ddb7be",
                 "shasum": ""
             },
             "require": {
@@ -1118,26 +1120,26 @@
             ],
             "support": {
                 "issues": "https://github.com/mvccore/ext-router-localization/issues",
-                "source": "https://github.com/mvccore/ext-router-localization/tree/v5.3.0"
+                "source": "https://github.com/mvccore/ext-router-localization/tree/v5.3.1"
             },
-            "time": "2024-11-21T15:01:00+00:00"
+            "time": "2024-12-03T21:35:27+00:00"
         },
         {
             "name": "mvccore/ext-router-media",
-            "version": "v5.3.0",
+            "version": "v5.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mvccore/ext-router-media.git",
-                "reference": "8d272c404a1556e12e97836826f179b259d846ea"
+                "reference": "acfee1b301ad4be03187858f918e35fded5e16b0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mvccore/ext-router-media/zipball/8d272c404a1556e12e97836826f179b259d846ea",
-                "reference": "8d272c404a1556e12e97836826f179b259d846ea",
+                "url": "https://api.github.com/repos/mvccore/ext-router-media/zipball/acfee1b301ad4be03187858f918e35fded5e16b0",
+                "reference": "acfee1b301ad4be03187858f918e35fded5e16b0",
                 "shasum": ""
             },
             "require": {
-                "mobiledetect/mobiledetectlib": "^2.8",
+                "mobiledetect/mobiledetectlib": "^2.8 || ^3.74 || ^4.8",
                 "mvccore/ext-router-extended": "^5.3",
                 "mvccore/mvccore": "^5.3",
                 "php": ">=5.4.0"
@@ -1181,27 +1183,27 @@
             ],
             "support": {
                 "issues": "https://github.com/mvccore/ext-router-media/issues",
-                "source": "https://github.com/mvccore/ext-router-media/tree/v5.3.0"
+                "source": "https://github.com/mvccore/ext-router-media/tree/v5.3.2"
             },
-            "time": "2024-11-21T15:01:00+00:00"
+            "time": "2024-12-06T17:54:36+00:00"
         },
         {
             "name": "mvccore/ext-router-media-localization",
-            "version": "v5.3.0",
+            "version": "v5.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mvccore/ext-router-media-localization.git",
-                "reference": "307b53afc834aa7a697cc016539c49ae8d978735"
+                "reference": "6bf10da9d040310862ff5403ed977e2b38f798a6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mvccore/ext-router-media-localization/zipball/307b53afc834aa7a697cc016539c49ae8d978735",
-                "reference": "307b53afc834aa7a697cc016539c49ae8d978735",
+                "url": "https://api.github.com/repos/mvccore/ext-router-media-localization/zipball/6bf10da9d040310862ff5403ed977e2b38f798a6",
+                "reference": "6bf10da9d040310862ff5403ed977e2b38f798a6",
                 "shasum": ""
             },
             "require": {
                 "mvccore/ext-router-extended": "^5.3",
-                "mvccore/ext-router-localization": "^5.3",
+                "mvccore/ext-router-localization": "^5.3.1",
                 "mvccore/ext-router-media": "^5.3",
                 "mvccore/mvccore": "^5.3",
                 "php": ">=5.4.0"
@@ -1254,9 +1256,9 @@
             ],
             "support": {
                 "issues": "https://github.com/mvccore/ext-router-media-localization/issues",
-                "source": "https://github.com/mvccore/ext-router-media-localization/tree/v5.3.0"
+                "source": "https://github.com/mvccore/ext-router-media-localization/tree/v5.3.1"
             },
-            "time": "2024-11-21T15:01:01+00:00"
+            "time": "2024-12-03T21:38:32+00:00"
         },
         {
             "name": "mvccore/ext-tool-locale-floatparser",
@@ -1316,16 +1318,16 @@
         },
         {
             "name": "mvccore/ext-translator",
-            "version": "v5.3.0",
+            "version": "v5.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mvccore/ext-translator.git",
-                "reference": "9103eea45ef464b0fb577f87d2b48e94c57d211a"
+                "reference": "36891a1181103ee3c0e7f6d729cfc6f89012a9c3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mvccore/ext-translator/zipball/9103eea45ef464b0fb577f87d2b48e94c57d211a",
-                "reference": "9103eea45ef464b0fb577f87d2b48e94c57d211a",
+                "url": "https://api.github.com/repos/mvccore/ext-translator/zipball/36891a1181103ee3c0e7f6d729cfc6f89012a9c3",
+                "reference": "36891a1181103ee3c0e7f6d729cfc6f89012a9c3",
                 "shasum": ""
             },
             "require": {
@@ -1364,22 +1366,22 @@
             ],
             "support": {
                 "issues": "https://github.com/mvccore/ext-translator/issues",
-                "source": "https://github.com/mvccore/ext-translator/tree/v5.3.0"
+                "source": "https://github.com/mvccore/ext-translator/tree/v5.3.1"
             },
-            "time": "2024-11-21T15:01:02+00:00"
+            "time": "2026-04-01T13:29:51+00:00"
         },
         {
             "name": "mvccore/ext-translator-csv",
-            "version": "v5.3.0",
+            "version": "v5.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mvccore/ext-translator-csv.git",
-                "reference": "56a5a34ba05b49e501e51362a8fb424f3d9e2640"
+                "reference": "9ee6b98437fe85e810cba84612c7eb7a904adb3f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mvccore/ext-translator-csv/zipball/56a5a34ba05b49e501e51362a8fb424f3d9e2640",
-                "reference": "56a5a34ba05b49e501e51362a8fb424f3d9e2640",
+                "url": "https://api.github.com/repos/mvccore/ext-translator-csv/zipball/9ee6b98437fe85e810cba84612c7eb7a904adb3f",
+                "reference": "9ee6b98437fe85e810cba84612c7eb7a904adb3f",
                 "shasum": ""
             },
             "require": {
@@ -1425,9 +1427,9 @@
             ],
             "support": {
                 "issues": "https://github.com/mvccore/ext-translator-csv/issues",
-                "source": "https://github.com/mvccore/ext-translator-csv/tree/v5.3.0"
+                "source": "https://github.com/mvccore/ext-translator-csv/tree/v5.3.1"
             },
-            "time": "2024-11-21T15:47:13+00:00"
+            "time": "2024-12-16T13:04:59+00:00"
         },
         {
             "name": "mvccore/ext-view-helper",
@@ -1487,16 +1489,16 @@
         },
         {
             "name": "mvccore/ext-view-helper-assets",
-            "version": "v5.3.0",
+            "version": "v5.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mvccore/ext-view-helper-assets.git",
-                "reference": "2fbb33614a01eaf7a5b77226d3098e3eaf4be91a"
+                "reference": "1665456469c080d8d5d7170726bfb427b4e4735f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mvccore/ext-view-helper-assets/zipball/2fbb33614a01eaf7a5b77226d3098e3eaf4be91a",
-                "reference": "2fbb33614a01eaf7a5b77226d3098e3eaf4be91a",
+                "url": "https://api.github.com/repos/mvccore/ext-view-helper-assets/zipball/1665456469c080d8d5d7170726bfb427b4e4735f",
+                "reference": "1665456469c080d8d5d7170726bfb427b4e4735f",
                 "shasum": ""
             },
             "require": {
@@ -1552,22 +1554,22 @@
             ],
             "support": {
                 "issues": "https://github.com/mvccore/ext-view-helper-assets/issues",
-                "source": "https://github.com/mvccore/ext-view-helper-assets/tree/v5.3.0"
+                "source": "https://github.com/mvccore/ext-view-helper-assets/tree/v5.3.5"
             },
-            "time": "2024-11-21T15:49:53+00:00"
+            "time": "2025-06-26T15:20:13+00:00"
         },
         {
             "name": "mvccore/mvccore",
-            "version": "v5.3.0",
+            "version": "v5.3.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mvccore/mvccore.git",
-                "reference": "857a39d69ed9bf7da05816aaf80862d0a4acc486"
+                "reference": "f3fa5fd0f77b09649987f7b86827dd45b4d019a7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mvccore/mvccore/zipball/857a39d69ed9bf7da05816aaf80862d0a4acc486",
-                "reference": "857a39d69ed9bf7da05816aaf80862d0a4acc486",
+                "url": "https://api.github.com/repos/mvccore/mvccore/zipball/f3fa5fd0f77b09649987f7b86827dd45b4d019a7",
+                "reference": "f3fa5fd0f77b09649987f7b86827dd45b4d019a7",
                 "shasum": ""
             },
             "require": {
@@ -1575,8 +1577,7 @@
             },
             "require-dev": {
                 "nette/tester": "<=2.4",
-                "phpstan/phpstan": "^1.12.11",
-                "tomflidr/tracy": "^2.7.4"
+                "phpstan/phpstan": "^1.12.11"
             },
             "suggest": {
                 "mvccore/ext-debug-tracy": "MvcCore Extension - Debug - Tracy (tracy/tracy) - adapter for better development."
@@ -1627,13 +1628,131 @@
             ],
             "support": {
                 "issues": "https://github.com/mvccore/mvccore/issues",
-                "source": "https://github.com/mvccore/mvccore/tree/v5.3.0"
+                "source": "https://github.com/mvccore/mvccore/tree/v5.3.14"
             },
-            "time": "2024-11-21T15:47:34+00:00"
+            "time": "2026-04-01T13:22:50+00:00"
+        },
+        {
+            "name": "psr/simple-cache",
+            "version": "3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/simple-cache.git",
+                "reference": "764e0b3939f5ca87cb904f570ef9be2d78a07865"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/simple-cache/zipball/764e0b3939f5ca87cb904f570ef9be2d78a07865",
+                "reference": "764e0b3939f5ca87cb904f570ef9be2d78a07865",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.0.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\SimpleCache\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "https://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interfaces for simple caching",
+            "keywords": [
+                "cache",
+                "caching",
+                "psr",
+                "psr-16",
+                "simple-cache"
+            ],
+            "support": {
+                "source": "https://github.com/php-fig/simple-cache/tree/3.0.0"
+            },
+            "time": "2021-10-29T13:26:27+00:00"
+        },
+        {
+            "name": "symfony/deprecation-contracts",
+            "version": "v3.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/deprecation-contracts.git",
+                "reference": "63afe740e99a13ba87ec199bb07bbdee937a5b62"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/deprecation-contracts/zipball/63afe740e99a13ba87ec199bb07bbdee937a5b62",
+                "reference": "63afe740e99a13ba87ec199bb07bbdee937a5b62",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.1"
+            },
+            "type": "library",
+            "extra": {
+                "thanks": {
+                    "url": "https://github.com/symfony/contracts",
+                    "name": "symfony/contracts"
+                },
+                "branch-alias": {
+                    "dev-main": "3.6-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "function.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "A generic function and convention to trigger deprecation notices",
+            "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/deprecation-contracts/tree/v3.6.0"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2024-09-25T14:21:43+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
-            "version": "v1.31.0",
+            "version": "v1.33.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-ctype.git",
@@ -1657,8 +1776,8 @@
             "type": "library",
             "extra": {
                 "thanks": {
-                    "name": "symfony/polyfill",
-                    "url": "https://github.com/symfony/polyfill"
+                    "url": "https://github.com/symfony/polyfill",
+                    "name": "symfony/polyfill"
                 }
             },
             "autoload": {
@@ -1692,7 +1811,7 @@
                 "portable"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-ctype/tree/v1.31.0"
+                "source": "https://github.com/symfony/polyfill-ctype/tree/v1.33.0"
             },
             "funding": [
                 {
@@ -1704,6 +1823,10 @@
                     "type": "github"
                 },
                 {
+                    "url": "https://github.com/nicolas-grekas",
+                    "type": "github"
+                },
+                {
                     "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
                     "type": "tidelift"
                 }
@@ -1712,27 +1835,28 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v7.1.6",
+            "version": "v7.4.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "3ced3f29e4f0d6bce2170ff26719f1fe9aacc671"
+                "reference": "c58fdf7b3d6c2995368264c49e4e8b05bcff2883"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/3ced3f29e4f0d6bce2170ff26719f1fe9aacc671",
-                "reference": "3ced3f29e4f0d6bce2170ff26719f1fe9aacc671",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/c58fdf7b3d6c2995368264c49e4e8b05bcff2883",
+                "reference": "c58fdf7b3d6c2995368264c49e4e8b05bcff2883",
                 "shasum": ""
             },
             "require": {
                 "php": ">=8.2",
+                "symfony/deprecation-contracts": "^2.5|^3",
                 "symfony/polyfill-ctype": "^1.8"
             },
             "conflict": {
                 "symfony/console": "<6.4"
             },
             "require-dev": {
-                "symfony/console": "^6.4|^7.0"
+                "symfony/console": "^6.4|^7.0|^8.0"
             },
             "bin": [
                 "Resources/bin/yaml-lint"
@@ -1763,7 +1887,7 @@
             "description": "Loads and dumps YAML files",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/yaml/tree/v7.1.6"
+                "source": "https://github.com/symfony/yaml/tree/v7.4.8"
             },
             "funding": [
                 {
@@ -1775,24 +1899,28 @@
                     "type": "github"
                 },
                 {
+                    "url": "https://github.com/nicolas-grekas",
+                    "type": "github"
+                },
+                {
                     "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-09-25T14:20:29+00:00"
+            "time": "2026-03-24T13:12:05+00:00"
         },
         {
             "name": "tedivm/jshrink",
-            "version": "v1.7.0",
+            "version": "v1.8.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tedious/JShrink.git",
-                "reference": "7a35f5a4651ca2ce77295eb8a3b4e133ba47e19e"
+                "reference": "f76454d4c48ddae6354a2f0eeb16633d4e755c9a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tedious/JShrink/zipball/7a35f5a4651ca2ce77295eb8a3b4e133ba47e19e",
-                "reference": "7a35f5a4651ca2ce77295eb8a3b4e133ba47e19e",
+                "url": "https://api.github.com/repos/tedious/JShrink/zipball/f76454d4c48ddae6354a2f0eeb16633d4e755c9a",
+                "reference": "f76454d4c48ddae6354a2f0eeb16633d4e755c9a",
                 "shasum": ""
             },
             "require": {
@@ -1827,7 +1955,7 @@
             ],
             "support": {
                 "issues": "https://github.com/tedious/JShrink/issues",
-                "source": "https://github.com/tedious/JShrink/tree/v1.7.0"
+                "source": "https://github.com/tedious/JShrink/tree/v1.8.1"
             },
             "funding": [
                 {
@@ -1839,48 +1967,55 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-10-04T17:23:23+00:00"
+            "time": "2025-11-20T14:34:30+00:00"
         },
         {
-            "name": "tomflidr/tracy",
-            "version": "v2.7.4",
+            "name": "tracy/tracy",
+            "version": "v2.11.3",
             "source": {
                 "type": "git",
-                "url": "https://github.com/tomFlidr/tracy.git",
-                "reference": "fcf094f395ed66fd00a9902c04a019c8753aab01"
+                "url": "https://github.com/nette/tracy.git",
+                "reference": "a41a2774c24abbcb0ba31f00a822eb372cf2ac96"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tomFlidr/tracy/zipball/fcf094f395ed66fd00a9902c04a019c8753aab01",
-                "reference": "fcf094f395ed66fd00a9902c04a019c8753aab01",
+                "url": "https://api.github.com/repos/nette/tracy/zipball/a41a2774c24abbcb0ba31f00a822eb372cf2ac96",
+                "reference": "a41a2774c24abbcb0ba31f00a822eb372cf2ac96",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "ext-session": "*",
-                "php": ">=5.4.4"
+                "php": "8.2 - 8.5"
             },
-            "replace": {
-                "tracy/tracy": "<3.0"
+            "conflict": {
+                "nette/di": "<3.0"
             },
             "require-dev": {
-                "nette/di": "~2.3 || ~3.0.0",
-                "nette/tester": "~1.7 || ~2.0",
-                "nette/utils": "~2.3"
-            },
-            "suggest": {
-                "https://nette.org/donate": "Please support Tracy via a donation"
+                "latte/latte": "^2.5 || ^3.0",
+                "nette/di": "^3.0",
+                "nette/http": "^3.0",
+                "nette/mail": "^3.0 || ^4.0",
+                "nette/phpstan-rules": "^1.0",
+                "nette/tester": "^2.6",
+                "nette/utils": "^3.0 || ^4.0",
+                "phpstan/extension-installer": "^1.4@stable",
+                "phpstan/phpstan": "^2.1@stable",
+                "psr/log": "^1.0 || ^2.0 || ^3.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.5-dev"
+                    "dev-master": "2.11-dev"
                 }
             },
             "autoload": {
                 "files": [
-                    "src/shortcuts.php"
+                    "src/Tracy/functions.php"
                 ],
+                "psr-4": {
+                    "Tracy\\": "src"
+                },
                 "classmap": [
                     "src"
                 ]
@@ -1899,7 +2034,7 @@
                     "homepage": "https://nette.org/contributors"
                 }
             ],
-            "description": "😎 Tracy: the addictive tool to ease debugging PHP code for cool developers. Friendly design, logging, profiler, advanced features like debugging AJAX calls or CLI support. You will love it.",
+            "description": "😎  Tracy: the addictive tool to ease debugging PHP code for cool developers. Friendly design, logging, profiler, advanced features like debugging AJAX calls or CLI support. You will love it.",
             "homepage": "https://tracy.nette.org",
             "keywords": [
                 "Xdebug",
@@ -1909,9 +2044,10 @@
                 "profiler"
             ],
             "support": {
-                "source": "https://github.com/tomFlidr/tracy/tree/v2.7.4"
+                "issues": "https://github.com/nette/tracy/issues",
+                "source": "https://github.com/nette/tracy/tree/v2.11.3"
             },
-            "time": "2024-03-26T12:57:07+00:00"
+            "time": "2026-02-25T18:34:26+00:00"
         },
         {
             "name": "tubalmartin/cssmin",
@@ -1974,12 +2110,12 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {},
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
         "php": ">=5.4.0"
     },
-    "platform-dev": [],
-    "plugin-api-version": "2.6.0"
+    "platform-dev": {},
+    "plugin-api-version": "2.9.0"
 }
